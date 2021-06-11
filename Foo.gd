@@ -1,12 +1,13 @@
 extends KinematicBody2D
 
-export var target_path : NodePath = ""
+var target = null
 
 var velocity := Vector2.ZERO
 var speed := 100.0
 var direction := Vector2.ZERO
 
 func _ready():
+	assert(is_instance_valid(target))
 	_adjust_direction()
 
 func _process(delta):
@@ -18,12 +19,12 @@ func _process(delta):
 func _physics_process(delta):
 	var collision = move_and_collide(velocity*delta)
 	if collision:
-		_adjust_direction()
+		queue_free()
+#		_adjust_direction()
 #		direction = Vector2.ZERO
 #		$Timer.start()
 
 func _adjust_direction():
-	var target = get_node(target_path)
 	direction = target.global_position - global_position
 
 
