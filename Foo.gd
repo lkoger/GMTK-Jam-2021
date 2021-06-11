@@ -20,12 +20,12 @@ func _process(delta):
 func _physics_process(delta):
 	var collision = move_and_collide(velocity*delta)
 	if collision:
-		if collision.collider is Player:
-			collision.collider.add_energy(-damage)
+#		if collision.collider is Player:
+#			collision.collider.add_energy(-damage)
 		queue_free()
-#		_adjust_direction()
-#		direction = Vector2.ZERO
-#		$Timer.start()
+##		_adjust_direction()
+##		direction = Vector2.ZERO
+##		$Timer.start()
 
 func _adjust_direction():
 	direction = target.global_position - global_position
@@ -33,3 +33,9 @@ func _adjust_direction():
 
 func _on_Timer_timeout():
 	_adjust_direction()
+
+
+func _on_Area2D_body_entered(body):
+	if body is Player:
+		body.add_energy(-damage)
+	queue_free()
