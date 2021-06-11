@@ -5,6 +5,7 @@ var target = null
 var velocity := Vector2.ZERO
 var speed := 100.0
 var direction := Vector2.ZERO
+var damage := 10.0
 
 func _ready():
 	assert(is_instance_valid(target))
@@ -19,6 +20,8 @@ func _process(delta):
 func _physics_process(delta):
 	var collision = move_and_collide(velocity*delta)
 	if collision:
+		if collision.collider is Player:
+			collision.collider.add_energy(-damage)
 		queue_free()
 #		_adjust_direction()
 #		direction = Vector2.ZERO
