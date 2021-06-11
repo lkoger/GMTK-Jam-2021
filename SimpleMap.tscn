@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Foo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SimpleMap.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 300 )
@@ -19,7 +20,21 @@ extents = Vector2( 512, 10 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 512, 10 )
 
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -216, -264, 0, 0, 0, 0, 224, -264, 0, 0, 0, 0, 224, 264, 0, 0, 0, 0, -216, 264, 0, 0, 0, 0, -216, -264 )
+}
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -224, -264, 0, 0, 0, 0, 216, -264, 0, 0, 0, 0, 216, 264, 0, 0, 0, 0, -224, 264 )
+}
+
 [node name="SimpleMap" type="Node2D"]
+script = ExtResource( 4 )
+foobar = ExtResource( 3 )
+flump_target_path = NodePath("Flump")
+doople_target_path = NodePath("Doople")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -51,30 +66,22 @@ position = Vector2( -320, -96 )
 [node name="Doople" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, -80 )
 
-[node name="Foo" parent="." instance=ExtResource( 3 )]
-position = Vector2( -120, 0 )
-target_path = NodePath("../Flump")
+[node name="FooPath" type="Path2D" parent="."]
+position = Vector2( -256, 0 )
+curve = SubResource( 6 )
 
-[node name="Foo3" parent="." instance=ExtResource( 3 )]
-position = Vector2( -256, 80 )
-target_path = NodePath("../Flump")
+[node name="FooSpawnLocation" type="PathFollow2D" parent="FooPath"]
+position = Vector2( -216, -264 )
 
-[node name="Foo4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -96, -216 )
-target_path = NodePath("../Flump")
+[node name="BarPath" type="Path2D" parent="."]
+position = Vector2( 256, 0 )
+curve = SubResource( 7 )
 
-[node name="Foo5" parent="." instance=ExtResource( 3 )]
-position = Vector2( -416, 216 )
-target_path = NodePath("../Flump")
+[node name="BarSpawnLocation" type="PathFollow2D" parent="BarPath"]
+position = Vector2( -224, -264 )
 
-[node name="Foo2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 192, 56 )
-target_path = NodePath("../Doople")
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
 
-[node name="Foo6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 408, -216 )
-target_path = NodePath("../Doople")
-
-[node name="Foo7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 96, -240 )
-target_path = NodePath("../Doople")
+[connection signal="timeout" from="MobTimer" to="." method="_spawn_foo_bar"]
