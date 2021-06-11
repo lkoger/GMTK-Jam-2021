@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Foo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SimpleMap.gd" type="Script" id=4]
 [ext_resource path="res://Art/Background-Dirt.png" type="Texture" id=5]
+[ext_resource path="res://Energy.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360.303 )
@@ -28,12 +29,18 @@ _data = {
 
 [sub_resource type="Curve2D" id=7]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -224, -264, 0, 0, 0, 0, 216, -264, 0, 0, 0, 0, 216, 264, 0, 0, 0, 0, -224, 264 )
+"points": PoolVector2Array( 0, 0, 0, 0, -224, -264, 0, 0, 0, 0, 216, -264, 0, 0, 0, 0, 216, 264, 0, 0, 0, 0, -224, 264, 0, 0, 0, 0, -224, -264 )
+}
+
+[sub_resource type="Curve2D" id=8]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -200, -248, 0, 0, 0, 0, 208, -248, 0, 0, 0, 0, -200, -192, 0, 0, 0, 0, 208, -192, 0, 0, 0, 0, -200, -128, 0, 0, 0, 0, 208, -128, 0, 0, 0, 0, -200, -64, 0, 0, 0, 0, 208, -64, 0, 0, 0, 0, -200, 0, 0, 0, 0, 0, 208, 0, 0, 0, 0, 0, -200, 64, 0, 0, 0, 0, 208, 64, 0, 0, 0, 0, -200, 128, 0, 0, 0, 0, 208, 128, 0, 0, 0, 0, -200, 192, 0, 0, 0, 0, 208, 192, 0, 0, 0, 0, -200, 248, 0, 0, 0, 0, 208, 248, 0, 0, 0, 0, -200, -248 )
 }
 
 [node name="SimpleMap" type="Node2D"]
 script = ExtResource( 4 )
 foobar = ExtResource( 3 )
+energy_ball = ExtResource( 6 )
 flump_target_path = NodePath("Flump")
 doople_target_path = NodePath("Doople")
 
@@ -88,4 +95,25 @@ position = Vector2( -224, -264 )
 wait_time = 5.0
 autostart = true
 
+[node name="EnergyTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="EnergyOrbPath" type="Path2D" parent="."]
+position = Vector2( -256, 0 )
+curve = SubResource( 8 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath"]
+position = Vector2( -200, -248 )
+rotation = 3.89634e-06
+
+[node name="EnergyOrbPath2" type="Path2D" parent="."]
+position = Vector2( 256, 0 )
+curve = SubResource( 8 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath2"]
+position = Vector2( -200, -248 )
+rotation = 3.89634e-06
+
 [connection signal="timeout" from="MobTimer" to="." method="_spawn_foo_bar"]
+[connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]

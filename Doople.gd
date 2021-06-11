@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Player
 
 var velocity := Vector2.ZERO
 var speed := 200.0
