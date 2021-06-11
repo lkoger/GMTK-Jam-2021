@@ -1,24 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Foo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SimpleMap.gd" type="Script" id=4]
+[ext_resource path="res://Art/Background-Dirt.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 300 )
+extents = Vector2( 10, 360.303 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 300 )
+extents = Vector2( 10, 358.6 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 300 )
+extents = Vector2( 16.6909, 359.879 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 512, 10 )
+extents = Vector2( 548.805, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 512, 10 )
+extents = Vector2( 548.24, 10 )
 
 [sub_resource type="Curve2D" id=6]
 _data = {
@@ -36,25 +37,28 @@ foobar = ExtResource( 3 )
 flump_target_path = NodePath("Flump")
 doople_target_path = NodePath("Doople")
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 502, 0 )
+position = Vector2( 538, 0 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -502, 0 )
+position = Vector2( -538.735, 0.0943909 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 290 )
+position = Vector2( 0, 370 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, -290 )
+position = Vector2( 0, -370 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
