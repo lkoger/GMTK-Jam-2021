@@ -14,3 +14,7 @@ func _on_menu_button_pressed(next_scene):
 		scene_path_to_load = next_scene
 		
 	get_tree().change_scene(scene_path_to_load)
+
+
+func _on_AudioStreamPlayer_finished() -> void:
+	$AudioStreamPlayer.play()
