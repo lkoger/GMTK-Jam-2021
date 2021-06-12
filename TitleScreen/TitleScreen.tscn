@@ -1,14 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://TitleScreen/comic.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Button.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://TitleScreen/SettingsButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TitleScreen/LoadGameButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TitleScreen/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TitleScreen/NewGameButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=7]
-[ext_resource path="res://icon.png" type="Texture" id=8]
-[ext_resource path="res://Music/title-screen-loop.wav" type="AudioStream" id=9]
+[ext_resource path="res://Music/title-screen-loop.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -27,16 +26,16 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 60.0
-margin_top = 60.0
-margin_right = 1220.0
+margin_left = 80.0
+margin_top = 40.0
+margin_right = 1200.0
 margin_bottom = 660.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="RichTextLabel" parent="Menu"]
-margin_right = 1160.0
+margin_right = 1120.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 876, 150 )
 custom_fonts/normal_font = SubResource( 1 )
@@ -49,75 +48,75 @@ text = "Tether"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0
-margin_right = 1160.0
-margin_bottom = 514.0
+margin_right = 1120.0
+margin_bottom = 486.0
+size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 578.0
-margin_bottom = 360.0
+margin_right = 558.0
+margin_bottom = 332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 40
+custom_constants/separation = 20
 
 [node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 578.0
+margin_right = 558.0
 margin_bottom = 60.0
-script = ExtResource( 2 )
 next_scene = "res://SimpleMap.tscn"
 
 [node name="LoadGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 100.0
-margin_right = 578.0
-margin_bottom = 160.0
-script = ExtResource( 2 )
+margin_top = 80.0
+margin_right = 558.0
+margin_bottom = 140.0
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 200.0
-margin_right = 578.0
-margin_bottom = 260.0
-script = ExtResource( 2 )
+margin_top = 160.0
+margin_right = 558.0
+margin_bottom = 220.0
 
 [node name="QuitButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 300.0
-margin_right = 578.0
-margin_bottom = 360.0
-script = ExtResource( 2 )
+margin_top = 240.0
+margin_right = 558.0
+margin_bottom = 300.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-margin_left = 582.0
-margin_right = 1160.0
-margin_bottom = 360.0
+margin_left = 562.0
+margin_right = 1120.0
+margin_bottom = 332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 257.0
-margin_top = 148.0
-margin_right = 321.0
-margin_bottom = 212.0
+margin_left = 247.0
+margin_top = 134.0
+margin_right = 311.0
+margin_bottom = 198.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 8 )
+texture = ExtResource( 2 )
 
 [node name="Footer" type="Label" parent="Menu"]
-margin_top = 518.0
-margin_right = 1160.0
-margin_bottom = 638.0
-size_flags_vertical = 3
+margin_top = 490.0
+margin_right = 1120.0
+margin_bottom = 647.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
-text = "Version 0.0
-Flump & Doople Games"
+text = "  Flump & Doople Games
+ is
+~ Derek Coblentz
+~ Levi Koger
+~ Mason Stooksbury"
+align = 1
 valign = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 8 )
 autoplay = true
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
