@@ -110,8 +110,8 @@ position = Vector2( -280, 0 )
 curve = SubResource( 8 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath"]
-position = Vector2( -200, -248 )
-rotation = 3.89634e-06
+position = Vector2( -168, -296 )
+rotation = 0.197394
 
 [node name="EnergyOrbPath2" type="Path2D" parent="."]
 position = Vector2( 280, 0 )
@@ -122,6 +122,5 @@ position = Vector2( -168, -296 )
 rotation = 0.197394
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
-
 [connection signal="timeout" from="MobTimer" to="." method="_spawn_foo_bar"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
