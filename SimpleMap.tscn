@@ -4,7 +4,7 @@
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Foo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SimpleMap.gd" type="Script" id=4]
-[ext_resource path="res://Art/Background-Dirt.png" type="Texture" id=5]
+[ext_resource path="res://Art/Background-Underground.png" type="Texture" id=5]
 [ext_resource path="res://Energy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=8]
@@ -112,5 +112,6 @@ position = Vector2( -168, -296 )
 rotation = 0.197394
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
+
 [connection signal="timeout" from="FooPath/Timer" to="FooPath" method="add_turret"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
