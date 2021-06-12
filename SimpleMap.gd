@@ -7,6 +7,7 @@ export var doople_target_path : NodePath = ""
 
 func _ready():
 	get_node('/root/Globals')._play('main')
+	print(len(get_tree().get_nodes_in_group("health")))
 
 func _spawn_energy():
 	$EnergyOrbPath/SpawnLocation.offset = randi()

@@ -27,7 +27,7 @@ extents = Vector2( 548.24, 10 )
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -168, -296, 0, 0, 0, 0, 152, -232, 0, 0, 0, 0, -168, -168, 0, 0, 0, 0, 152, -104, 0, 0, 0, 0, -168, -40, 0, 0, 0, 0, 152, 24, 0, 0, 0, 0, -168, 80, 0, 0, 0, 0, 152, 152, 0, 0, 0, 0, -160, 208, 0, 0, 0, 0, 152, 272, 0, 0, 0, 0, -168, 288, 0, 0, 0, 0, 144, 208, 0, 0, 0, 0, -168, 144, 0, 0, 0, 0, 152, 72, 0, 0, 0, 0, -168, 16, 0, 0, 0, 0, 144, -48, 0, 0, 0, 0, -160, -104, 0, 0, 0, 0, 152, -184, 0, 0, 0, 0, -168, -240, 0, 0, 0, 0, 152, -296, 0, 0, 0, 0, -168, -296 )
+"points": PoolVector2Array( 0, 0, 0, 0, -168, -232, 0, 0, 0, 0, 152, -176, 0, 0, 0, 0, -168, -168, 0, 0, 0, 0, 152, -104, 0, 0, 0, 0, -168, -40, 0, 0, 0, 0, 152, 24, 0, 0, 0, 0, -168, 80, 0, 0, 0, 0, 152, 152, 0, 0, 0, 0, -160, 208, 0, 0, 0, 0, 152, 272, 0, 0, 0, 0, -168, 288, 0, 0, 0, 0, 144, 208, 0, 0, 0, 0, -168, 144, 0, 0, 0, 0, 152, 72, 0, 0, 0, 0, -168, 16, 0, 0, 0, 0, 144, -48, 0, 0, 0, 0, -160, -104, 0, 0, 0, 0, 144, -128, 0, 0, 0, 0, -168, -200, 0, 0, 0, 0, 144, -232, 0, 0, 0, 0, -160, -232, 0, 0, 0, 0, -168, -232 )
 }
 
 [node name="SimpleMap" type="Node2D"]
@@ -60,7 +60,7 @@ position = Vector2( 0, 370 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, -370 )
+position = Vector2( 0, -312 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -80,10 +80,6 @@ foobar = ExtResource( 3 )
 target_path = NodePath("../Flump")
 world_path = NodePath("..")
 
-[node name="Timer" type="Timer" parent="FooPath"]
-wait_time = 10.0
-autostart = true
-
 [node name="FooPath2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 280, 0 )
 turret = ExtResource( 8 )
@@ -100,18 +96,17 @@ position = Vector2( -280, 0 )
 curve = SubResource( 6 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath"]
-position = Vector2( -168, -296 )
-rotation = 0.197394
+position = Vector2( -168, -232 )
+rotation = 0.173245
 
 [node name="EnergyOrbPath2" type="Path2D" parent="."]
 position = Vector2( 280, 0 )
 curve = SubResource( 6 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath2"]
-position = Vector2( -168, -296 )
-rotation = 0.197394
+position = Vector2( -168, -232 )
+rotation = 0.173245
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
 
-[connection signal="timeout" from="FooPath/Timer" to="FooPath" method="add_turret"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
