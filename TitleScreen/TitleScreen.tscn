@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TitleScreen/comic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://TitleScreen/QuitButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TitleScreen/NewGameButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=7]
+[ext_resource path="res://EnergyParticles1.tres" type="Material" id=8]
+[ext_resource path="res://EnergyParticles2.tres" type="Material" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -113,3 +115,115 @@ custom_fonts/font = SubResource( 2 )
 text = "  Flump & Doople Games"
 align = 1
 valign = 2
+
+[node name="Particles" type="Node2D" parent="."]
+position = Vector2( 1144.1, 107.423 )
+rotation = 0.118473
+scale = Vector2( 1.67056, 1.52295 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles2" type="Node2D" parent="."]
+position = Vector2( 430.984, 118.762 )
+rotation = -0.90426
+scale = Vector2( 1.34416, 3.28359 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles2"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles2"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles3" type="Node2D" parent="."]
+position = Vector2( 535.557, 433.742 )
+rotation = 0.132276
+scale = Vector2( 4.27833, 0.984165 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles3"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles3"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles4" type="Node2D" parent="."]
+position = Vector2( 868.177, 271.212 )
+rotation = -0.970679
+scale = Vector2( 2.3857, 3.07515 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles4"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles4"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles5" type="Node2D" parent="."]
+position = Vector2( 1112.6, 510.597 )
+rotation = 0.488692
+scale = Vector2( 1.32331, 1.35334 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles5"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles5"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles6" type="Node2D" parent="."]
+position = Vector2( 737.145, 581.153 )
+rotation = 0.199325
+scale = Vector2( 1, 1.52 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles6"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles6"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles7" type="Node2D" parent="."]
+position = Vector2( 100.885, 607.611 )
+rotation = 0.165326
+scale = Vector2( 0.644611, 1.38167 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles7"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles7"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )
+
+[node name="Particles8" type="Node2D" parent="."]
+position = Vector2( 61.8272, 41.9067 )
+rotation = -0.238186
+scale = Vector2( 1.78979, 1.15871 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles8"]
+amount = 100
+process_material = ExtResource( 8 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles8"]
+scale = Vector2( 1.8, 1.88 )
+amount = 100
+process_material = ExtResource( 9 )

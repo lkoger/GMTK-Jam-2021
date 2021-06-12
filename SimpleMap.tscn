@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Health.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=8]
 [ext_resource path="res://TurretPath.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PowerLine.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360.303 )
@@ -67,12 +68,18 @@ shape = SubResource( 5 )
 current = true
 
 [node name="Flump" parent="." instance=ExtResource( 1 )]
-position = Vector2( -320, -96 )
+position = Vector2( -280, 0 )
 health_path = NodePath("../Health")
 
+[node name="PowerLine" parent="Flump" instance=ExtResource( 10 )]
+link_path = NodePath("../../Doople")
+
 [node name="Doople" parent="." instance=ExtResource( 2 )]
-position = Vector2( 192, -80 )
+position = Vector2( 280, 0 )
 health_path = NodePath("../Health")
+
+[node name="PowerLine" parent="Doople" instance=ExtResource( 10 )]
+link_path = NodePath("../../Flump")
 
 [node name="FooPath" parent="." instance=ExtResource( 9 )]
 turret = ExtResource( 8 )
@@ -90,6 +97,10 @@ turret = ExtResource( 8 )
 foobar = ExtResource( 3 )
 target_path = NodePath("../Doople")
 world_path = NodePath("..")
+
+[node name="Timer" type="Timer" parent="FooPath2"]
+wait_time = 10.0
+autostart = true
 
 [node name="EnergyTimer" type="Timer" parent="."]
 wait_time = 4.0
@@ -114,4 +125,5 @@ rotation = 0.197394
 [node name="Health" parent="." instance=ExtResource( 7 )]
 
 [connection signal="timeout" from="FooPath/Timer" to="FooPath" method="add_turret"]
+[connection signal="timeout" from="FooPath2/Timer" to="FooPath2" method="add_turret"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]

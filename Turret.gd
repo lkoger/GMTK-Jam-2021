@@ -1,4 +1,5 @@
 extends PathFollow2D
+class_name Turret
 
 var foobar
 var target = null
@@ -23,3 +24,6 @@ func _spawn():
 	foo.target = target
 	foo.global_position = global_position
 	world.add_child(foo)
+
+func destroy():
+	queue_free()

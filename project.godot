@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Player.gd"
+}, {
+"base": "PathFollow2D",
+"class": "Turret",
+"language": "GDScript",
+"path": "res://Turret.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Player": "",
+"Turret": ""
 }
 
 [application]
@@ -26,7 +32,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Health="res://Health.tscn"
 Globals="*res://Globals.tscn"
 
 [display]
