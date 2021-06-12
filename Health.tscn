@@ -12,11 +12,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -512.0
-margin_top = -300.0
-margin_right = 512.0
-margin_bottom = -290.0
+[node name="Bar" type="ColorRect" parent="."]
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = -350.0
 color = Color( 0, 0.945098, 0.854902, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

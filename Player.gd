@@ -1,7 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
-onready var health = get_node("/root/Health")
+export var health_path : NodePath = ""
+onready var health = get_node(health_path)
 
 func ready():
 	pass
