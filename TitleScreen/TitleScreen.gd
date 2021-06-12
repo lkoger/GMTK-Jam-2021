@@ -3,7 +3,7 @@ extends Control
 var scene_path_to_load
 
 func _ready() -> void:
-	get_node('/root/Globals')._play('breather')
+	get_node('/root/Globals')._play('title')
 	# Connect the pressed() method of every scene to this scene
 	for button in $Menu/CenterRow/Buttons.get_children():
 		button.connect("pressed", self, "_on_menu_button_pressed", [button.next_scene])

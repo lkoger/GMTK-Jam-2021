@@ -15,3 +15,7 @@ func _play(song):
 		'breather':
 			$AudioStreamPlayer.set_stream(breatherRoundWav)
 			$AudioStreamPlayer.play()
+
+
+func _on_AudioStreamPlayer_finished() -> void:
+	$AudioStreamPlayer.play()

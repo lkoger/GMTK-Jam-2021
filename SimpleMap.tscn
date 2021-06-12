@@ -112,6 +112,5 @@ position = Vector2( -168, -296 )
 rotation = 0.197394
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
-
 [connection signal="timeout" from="FooPath/Timer" to="FooPath" method="add_turret"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
