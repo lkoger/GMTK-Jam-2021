@@ -1,23 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Energy.gd" type="Script" id=1]
+[ext_resource path="res://EnergyParticles1.tres" type="Material" id=2]
+[ext_resource path="res://EnergyParticles2.tres" type="Material" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
-
-[sub_resource type="ParticlesMaterial" id=2]
-emission_shape = 1
-emission_sphere_radius = 12.0
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = -2.0
-orbit_velocity_random = 1.0
-tangential_accel = 10.0
-scale = 3.0
-scale_random = 1.0
-color = Color( 0.470588, 0.709804, 0.980392, 1 )
-hue_variation = 0.03
-hue_variation_random = 1.0
 
 [node name="Energy" type="Area2D"]
 collision_layer = 8
@@ -31,11 +19,17 @@ shape = SubResource( 1 )
 wait_time = 5.0
 autostart = true
 
+[node name="Particles2D2" type="Particles2D" parent="."]
+amount = 100
+lifetime = 2.0
+preprocess = 1.0
+process_material = ExtResource( 2 )
+
 [node name="Particles2D" type="Particles2D" parent="."]
 amount = 100
 lifetime = 2.0
 preprocess = 1.0
-process_material = SubResource( 2 )
+process_material = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Energy_body_entered"]
 [connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]

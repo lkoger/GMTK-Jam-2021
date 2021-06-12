@@ -20,3 +20,4 @@ func add_turret():
 	t.target = target
 	t.world = world
 	add_child(t)
+
