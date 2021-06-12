@@ -17,19 +17,21 @@ shape = SubResource( 1 )
 
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
+
+[node name="FadeAwayTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 amount = 100
 lifetime = 2.0
-preprocess = 1.0
 process_material = ExtResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 amount = 100
 lifetime = 2.0
-preprocess = 1.0
 process_material = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Energy_body_entered"]
 [connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]
+[connection signal="timeout" from="FadeAwayTimer" to="." method="_on_FadeAwayTimer_timeout"]

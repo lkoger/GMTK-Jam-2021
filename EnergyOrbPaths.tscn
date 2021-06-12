@@ -1,0 +1,142 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://EnergyOrbPaths.gd" type="Script" id=1]
+[ext_resource path="res://EnergyPath2D.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -192, 256, 0, 0, 0, 0, 200, 128, 0, 0, 0, 0, -192, 0, 0, 0, 0, 0, 200, -128, 0, 0, 0, 0, -192, -256 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -192, 256, 0, 0, 0, 0, 200, 128, 0, 0, 0, 0, -192, 0, 0, 0, 0, 0, 200, -128, 0, 0, 0, 0, -192, -256 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -192, 256, 0, 0, 0, 0, -192, -256, 0, 0, 0, 0, 192, -256, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, -192, 256 )
+}
+
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -192, 256, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, 192, 128, 0, 0, 0, 0, -192, 128, 0, 0, 0, 0, -192, 0, 0, 0, 0, 0, 192, 0, 0, 0, 0, 0, 192, -128, 0, 0, 0, 0, -192, -128, 0, 0, 0, 0, -192, -256, 0, 0, 0, 0, 192, -256 )
+}
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, -16, -8, 0, 0, 0, 0, -16, -24, 0, 0, 0, 0, -8, -40, 0, 0, 0, 0, 8, -48, 0, 0, 0, 0, 24, -40, 0, 0, 0, 0, 40, -24, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 40, 16, 0, 0, 0, 0, 24, 24, 0, 0, 0, 0, -8, 32, 0, 0, 0, 0, -32, 16, 0, 0, 0, 0, -40, 0, 0, 0, 0, 0, -48, -32, 0, 0, 0, 0, -40, -48, 0, 0, 0, 0, -16, -64, 0, 0, 0, 0, 8, -72, 0, 0, 0, 0, 32, -64, 0, 0, 0, 0, 56, -48, 0, 0, 0, 0, 64, -32, 0, 0, 0, 0, 72, -8, 0, 0, 0, 0, 64, 24, 0, 0, 0, 0, 40, 48, 0, 0, 0, 0, 16, 56, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, -32, 56, 0, 0, 0, 0, -48, 40, 0, 0, 0, 0, -64, 24, 0, 0, 0, 0, -80, -16, 0, 0, 0, 0, -72, -72, 0, 0, 0, 0, -24, -96, 0, 0, 0, 0, 24, -104, 0, 0, 0, 0, 72, -96, 0, 0, 0, 0, 96, -72, 0, 0, 0, 0, 104, -24, 0, 0, 0, 0, 112, 16, 0, 0, 0, 0, 96, 48, 0, 0, 0, 0, 72, 80, 0, 0, 0, 0, 48, 88, 0, 0, 0, 0, 8, 96, 0, 0, 0, 0, -40, 88, 0, 0, 0, 0, -88, 72, 0, 0, 0, 0, -112, 24, 0, 0, 0, 0, -112, -40, 0, 0, 0, 0, -96, -96, 0, 0, 0, 0, -72, -120, 0, 0, 0, 0, -32, -136, 0, 0, 0, 0, 32, -136, 0, 0, 0, 0, 88, -128, 0, 0, 0, 0, 120, -96, 0, 0, 0, 0, 136, -64, 0, 0, 0, 0, 144, -24, 0, 0, 0, 0, 152, 16, 0, 0, 0, 0, 144, 56, 0, 0, 0, 0, 120, 88, 0, 0, 0, 0, 72, 120, 0, 0, 0, 0, 16, 136, 0, 0, 0, 0, -64, 120, 0, 0, 0, 0, -104, 104, 0, 0, 0, 0, -136, 64, 0, 0, 0, 0, -152, -8, 0, 0, 0, 0, -136, -104, 0, 0, 0, 0, -96, -152, 0, 0, 0, 0, -32, -176, 0, 0, 0, 0, 24, -184, 0, 0, 0, 0, 104, -168, 0, 0, 0, 0, 160, -120, 0, 0, 0, 0, 184, -48, 0, 0, 0, 0, 192, 32, 0, 0, 0, 0, 176, 104, 0, 0, 0, 0, 112, 152, 0, 0, 0, 0, 8, 184, 0, 0, 0, 0, -96, 160, 0, 0, 0, 0, -160, 104, 0, 0, 0, 0, -184, -8, 0, 0, 0, 0, -160, -128, 0, 0, 0, 0, -144, -168, 0, 0, 0, 0, -96, -208, 0, 0, 0, 0, -32, -224, 0, 0, 0, 0, 0, -232, 0, 0, 0, 0, 40, -224, 0, 0, 0, 0, 96, -216, 0, 0, 0, 0, 136, -200, 0, 0, 0, 0, 168, -176, 0, 0, 0, 0, 200, -144, 0, 0, 0, 0, 208, -96, 0, 0, 0, 0, 216, -16, 0, 0, 0, 0, 216, 40, 0, 0, 0, 0, 216, 96, 0, 0, 0, 0, 208, 152, 0, 0, 0, 0, 200, 184, 0, 0, 0, 0, 144, 192, 0, 0, 0, 0, 72, 216, 0, 0, 0, 0, 16, 224, 0, 0, 0, 0, -48, 224, 0, 0, 0, 0, -112, 216, 0, 0, 0, 0, -152, 200, 0, 0, 0, 0, -176, 160, 0, 0, 0, 0, -200, 128, 0, 0, 0, 0, -208, 56, 0, 0, 0, 0, -208, 8, 0, 0, 0, 0, -208, -40, 0, 0, 0, 0, -208, -80, 0, 0, 0, 0, -208, -144, 0, 0, 0, 0, -200, -176, 0, 0, 0, 0, -192, -208, 0, 0, 0, 0, -184, -224, 0, 0, 0, 0, -168, -248, 0, 0, 0, 0, -128, -240, 0, 0, 0, 0, -88, -248, 0, 0, 0, 0, -72, -272, 0, 0, 0, 0, -16, -272, 0, 0, 0, 0, 24, -256, 0, 0, 0, 0, 64, -240, 0, 0, 0, 0, 128, -256, 0, 0, 0, 0, 160, -272, 0, 0, 0, 0, 200, -256, 0, 0, 0, 0, 208, -216, 0, 0, 0, 0, 200, -192, 0, 0, 0, 0, 160, -216, 0, 0, 0, 0, 136, -248, 0, 0, 0, 0, 80, -264, 0, 0, 0, 0, 48, -272, 0, 0, 0, 0, -192, -272, 0, 0, 0, 0, -192, -248, 0, 0, 0, 0, -200, -232, 0, 0, 0, 0, -208, 160, 0, 0, 0, 0, -200, 216, 0, 0, 0, 0, -176, 200, 0, 0, 0, 0, -160, 224, 0, 0, 0, 0, -208, 240, 0, 0, 0, 0, -160, 264, 0, 0, 0, 0, -88, 248, 0, 0, 0, 0, 0, 256, 0, 0, 0, 0, 48, 248, 0, 0, 0, 0, 144, 256, 0, 0, 0, 0, 208, 256, 0, 0, 0, 0, 216, 240, 0, 0, 0, 0, 160, 208, 0, 0, 0, 0, 120, 232, 0, 0, 0, 0, 200, 184, 0, 0, 0, 0, 160, 144, 0, 0, 0, 0, 8, 184, 0, 0, 0, 0, -152, -216, 0, 0, 0, 0, 40, -248, 0, 0, 0, 0, 152, -240, 0, 0, 0, 0, 160, 16, 0, 0, 0, 0, -168, 184, 0, 0, 0, 0, -192, -64, 0, 0, 0, 0, 152, 8, 0, 0, 0, 0, -96, -176, 0, 0, 0, 0, -16, -200, 0, 0, 0, 0, 40, -200, 0, 0, 0, 0, 136, -168, 0, 0, 0, 0, 160, -136, 0, 0, 0, 0, 184, -80, 0, 0, 0, 0, 184, -32, 0, 0, 0, 0, 176, 24, 0, 0, 0, 0, 160, 56, 0, 0, 0, 0, 128, 88, 0, 0, 0, 0, 96, 120, 0, 0, 0, 0, 48, 144, 0, 0, 0, 0, -48, 152, 0, 0, 0, 0, -96, 144, 0, 0, 0, 0, -152, 72, 0, 0, 0, 0, -168, -16, 0, 0, 0, 0, -144, -96, 0, 0, 0, 0, -64, -144, 0, 0, 0, 0, 24, -144, 0, 0, 0, 0, 96, -128, 0, 0, 0, 0, 136, -72, 0, 0, 0, 0, 136, -16, 0, 0, 0, 0, 96, 48, 0, 0, 0, 0, 0, 64, 0, 0, 0, 0, -72, 48, 0, 0, 0, 0, -104, 0, 0, 0, 0, 0, -72, -88, 0, 0, 0, 0, 56, -112, 0, 0, 0, 0, 88, -40, 0, 0, 0, 0, 56, 8, 0, 0, 0, 0, -32, 16, 0, 0, 0, 0, -32, -56, 0, 0, 0, 0, 40, -64, 0, 0, 0, 0, 16, -16, 0, 0, 0, 0, -32, 8, 0, 0, 0, 0, -8, -40, 0, 0, 0, 0, 16, -16, 0, 0, 0, 0, -88, -24, 0, 0, 0, 0, -120, -112, 0, 0, 0, 0, -112, -176, 0, 0, 0, 0, 32, -208, 0, 0, 0, 0, 112, -192, 0, 0, 0, 0, 160, -120, 0, 0, 0, 0, 112, 8, 0, 0, 0, 0, 32, 96, 0, 0, 0, 0, -56, 16, 0, 0, 0, 0, -48, -56, 0, 0, 0, 0, -80, 0, 0, 0, 0, 0, -152, -56, 0, 0, 0, 0, -168, -136, 0, 0, 0, 0, -168, -184, 0, 0, 0, 0, -160, -224, 0, 0, 0, 0, -176, -192, 0, 0, 0, 0, -176, -120 )
+}
+
+[node name="EnergyOrbPaths" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = -260.0
+margin_top = -330.0
+margin_right = 260.0
+margin_bottom = 330.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_left = -230.0
+margin_top = -300.0
+margin_right = 230.0
+margin_bottom = 300.0
+color = Color( 1, 1, 1, 0.556863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PatternedPaths" type="Node2D" parent="."]
+visible = false
+
+[node name="ZigZagPath1" type="Path2D" parent="PatternedPaths"]
+visible = false
+curve = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/ZigZagPath1"]
+position = Vector2( -192, 256 )
+rotation = -0.315618
+
+[node name="ZigZagPath2" type="Path2D" parent="PatternedPaths"]
+visible = false
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+curve = SubResource( 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/ZigZagPath2"]
+position = Vector2( -192, 256 )
+rotation = -0.315618
+
+[node name="RectanglePath" type="Path2D" parent="PatternedPaths"]
+curve = SubResource( 3 )
+script = ExtResource( 2 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/RectanglePath"]
+position = Vector2( -192, 256 )
+rotation = -1.5708
+
+[node name="JaggedPath1" type="Path2D" parent="PatternedPaths"]
+visible = false
+curve = SubResource( 4 )
+script = ExtResource( 2 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/JaggedPath1"]
+position = Vector2( -192, 256 )
+
+[node name="JaggedPath2" type="Path2D" parent="PatternedPaths"]
+visible = false
+scale = Vector2( -1, 1 )
+curve = SubResource( 4 )
+script = ExtResource( 2 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/JaggedPath2"]
+position = Vector2( -192, 256 )
+
+[node name="CircularPath1" type="Path2D" parent="PatternedPaths"]
+visible = false
+curve = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/CircularPath1"]
+position = Vector2( 0, -8 )
+rotation = 3.14159
+
+[node name="CircularPath2" type="Path2D" parent="PatternedPaths"]
+visible = false
+scale = Vector2( -1, 1 )
+curve = SubResource( 5 )
+script = ExtResource( 2 )
+
+[node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/CircularPath2"]
+position = Vector2( 0, -8 )
+rotation = 3.14159
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="StandardPath" type="Path2D" parent="."]
+visible = false
+curve = SubResource( 5 )
+script = ExtResource( 2 )
+num_energy_balls = 1
+energy_amount_per_ball = 10.0
+energy_life_time = 5.0
+
+[node name="SpawnLocation" type="PathFollow2D" parent="StandardPath"]
+position = Vector2( 0, -8 )
+rotation = 3.14159
+
+[connection signal="timeout" from="Timer" to="." method="spawn_random_ball"]

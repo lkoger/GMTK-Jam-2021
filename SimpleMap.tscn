@@ -9,6 +9,7 @@
 [ext_resource path="res://Health.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Turret.tscn" type="PackedScene" id=8]
 [ext_resource path="res://TurretPath.tscn" type="PackedScene" id=9]
+[ext_resource path="res://EnergyOrbPaths.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360.303 )
@@ -24,11 +25,6 @@ extents = Vector2( 548.805, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 548.24, 10 )
-
-[sub_resource type="Curve2D" id=6]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -168, -232, 0, 0, 0, 0, 152, -176, 0, 0, 0, 0, -168, -168, 0, 0, 0, 0, 152, -104, 0, 0, 0, 0, -168, -40, 0, 0, 0, 0, 152, 24, 0, 0, 0, 0, -168, 80, 0, 0, 0, 0, 152, 152, 0, 0, 0, 0, -160, 208, 0, 0, 0, 0, 152, 272, 0, 0, 0, 0, -168, 288, 0, 0, 0, 0, 144, 208, 0, 0, 0, 0, -168, 144, 0, 0, 0, 0, 152, 72, 0, 0, 0, 0, -168, 16, 0, 0, 0, 0, 144, -48, 0, 0, 0, 0, -160, -104, 0, 0, 0, 0, 144, -128, 0, 0, 0, 0, -168, -200, 0, 0, 0, 0, 144, -232, 0, 0, 0, 0, -160, -232, 0, 0, 0, 0, -168, -232 )
-}
 
 [node name="SimpleMap" type="Node2D"]
 z_index = -1
@@ -91,22 +87,12 @@ world_path = NodePath("..")
 wait_time = 4.0
 autostart = true
 
-[node name="EnergyOrbPath" type="Path2D" parent="."]
-position = Vector2( -280, 0 )
-curve = SubResource( 6 )
-
-[node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath"]
-position = Vector2( -168, -232 )
-rotation = 0.173245
-
-[node name="EnergyOrbPath2" type="Path2D" parent="."]
-position = Vector2( 280, 0 )
-curve = SubResource( 6 )
-
-[node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath2"]
-position = Vector2( -168, -232 )
-rotation = 0.173245
-
 [node name="Health" parent="." instance=ExtResource( 7 )]
 
-[connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
+[node name="EnergyPaths" type="Node2D" parent="."]
+
+[node name="EnergyOrbPaths" parent="EnergyPaths" instance=ExtResource( 10 )]
+position = Vector2( 272, 32 )
+
+[node name="EnergyOrbPaths2" parent="EnergyPaths" instance=ExtResource( 10 )]
+position = Vector2( -272, 32 )
