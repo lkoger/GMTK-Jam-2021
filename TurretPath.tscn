@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TurretPath.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -224, -328, 0, 0, 0, 0, 224, -328, 0, 0, 0, 0, 216, 336, 0, 0, 0, 0, -224, 336, 0, 0, 0, 0, -224, -328 )
+}
+
+[node name="TurretPath" type="Path2D"]
+position = Vector2( -280, 0 )
+curve = SubResource( 1 )
+script = ExtResource( 2 )
