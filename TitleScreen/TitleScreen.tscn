@@ -49,12 +49,12 @@ text = "Tether"
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0
 margin_right = 1120.0
-margin_bottom = 555.0
+margin_bottom = 486.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 558.0
-margin_bottom = 401.0
+margin_bottom = 332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -90,27 +90,31 @@ margin_bottom = 300.0
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 562.0
 margin_right = 1120.0
-margin_bottom = 401.0
+margin_bottom = 332.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
 margin_left = 247.0
-margin_top = 168.0
+margin_top = 134.0
 margin_right = 311.0
-margin_bottom = 232.0
+margin_bottom = 198.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 
 [node name="Footer" type="Label" parent="Menu"]
-margin_top = 559.0
+margin_top = 490.0
 margin_right = 1120.0
-margin_bottom = 620.0
+margin_bottom = 647.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 2 )
-text = "Version 0.0
-Flump & Doople Games"
+text = "  Flump & Doople Games
+ is
+~ Derek Coblentz
+~ Levi Koger
+~ Mason Stooksbury"
+align = 1
 valign = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
