@@ -6,6 +6,7 @@ export var flump_target_path : NodePath = ""
 export var doople_target_path : NodePath = ""
 
 func _ready():
+	get_node('/root/Globals')._play('main')
 	$FooPath/FooSpawnLocation.offset = randi()
 	$BarPath/BarSpawnLocation.offset = randi()
 
