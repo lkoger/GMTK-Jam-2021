@@ -32,7 +32,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Health="res://Health.tscn"
 Globals="*res://Globals.tscn"
 
 [display]
