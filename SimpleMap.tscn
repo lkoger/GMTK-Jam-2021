@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/Background-Dirt.png" type="Texture" id=5]
 [ext_resource path="res://Energy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Art/Triangle Enemy.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360.303 )
@@ -25,8 +26,19 @@ extents = Vector2( 548.24, 10 )
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -216, -264, 0, 0, 0, 0, -216, -336, 0, 0, 0, 0, 0, -336, 0, 0, 0, 0, 224, -336, 0, 0, 0, 0, 224, -264, 0, 0, 0, 0, 224, 264, 0, 0, 0, 0, 224, 336, 0, 0, 0, 0, 8, 336, 0, 0, 0, 0, -216, 336, 0, 0, 0, 0, -216, 264, 0, 0, 0, 0, -216, -264 )
+"points": PoolVector2Array( 0, 0, 0, 0, -224, -328, 0, 0, 0, 0, 224, -328, 0, 0, 0, 0, 216, 336, 0, 0, 0, 0, -224, 336, 0, 0, 0, 0, -224, -328 )
 }
+
+[sub_resource type="ParticlesMaterial" id=9]
+emission_shape = 1
+emission_sphere_radius = 16.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+color = Color( 0.235294, 0.0196078, 0.0196078, 1 )
 
 [sub_resource type="Curve2D" id=7]
 _data = {
@@ -47,6 +59,7 @@ flump_target_path = NodePath("Flump")
 doople_target_path = NodePath("Doople")
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = -1
 texture = ExtResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -86,8 +99,21 @@ position = Vector2( -280, 0 )
 curve = SubResource( 6 )
 
 [node name="FooSpawnLocation" type="PathFollow2D" parent="FooPath"]
-position = Vector2( -216, -264 )
-rotation = -1.5708
+position = Vector2( -224, -328 )
+
+[node name="Sprite" type="Sprite" parent="FooPath/FooSpawnLocation"]
+rotation = 1.01229
+texture = ExtResource( 8 )
+
+[node name="Particles2D" type="Particles2D" parent="FooPath/FooSpawnLocation/Sprite"]
+position = Vector2( 0.243469, -0.0422668 )
+emitting = false
+amount = 64
+one_shot = true
+local_coords = false
+process_material = SubResource( 9 )
+
+[node name="Turret" type="Node2D" parent="FooPath/FooSpawnLocation"]
 
 [node name="BarPath" type="Path2D" parent="."]
 position = Vector2( 280, 0 )
@@ -97,9 +123,27 @@ curve = SubResource( 7 )
 position = Vector2( -224, -264 )
 rotation = -1.5708
 
+[node name="Sprite" type="Sprite" parent="BarPath/BarSpawnLocation"]
+rotation = 1.76819
+texture = ExtResource( 8 )
+
+[node name="Particles2D" type="Particles2D" parent="BarPath/BarSpawnLocation/Sprite"]
+position = Vector2( 0.243, -0.042 )
+rotation = 0.814897
+scale = Vector2( 1, 1 )
+emitting = false
+amount = 64
+one_shot = true
+local_coords = false
+process_material = SubResource( 9 )
+
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
 autostart = true
+
+[node name="MobTimer2" type="Timer" parent="."]
+one_shot = true
 
 [node name="EnergyTimer" type="Timer" parent="."]
 wait_time = 4.0
@@ -123,4 +167,5 @@ rotation = 0.197394
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
 [connection signal="timeout" from="MobTimer" to="." method="_spawn_foo_bar"]
+[connection signal="timeout" from="MobTimer2" to="." method="_spawn_foo_bar2"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
