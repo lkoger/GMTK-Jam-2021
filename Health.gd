@@ -9,8 +9,6 @@ var normal_decay_rate := true
 func _physics_process(delta):
 	if normal_decay_rate:
 		energy -= delta * energy_loss_per_second
-	else:
-		energy -= delta
 	$Bar.rect_size.x = (energy / max_energy) * bar_length
 	if energy <= 0.0:
 		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")

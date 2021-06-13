@@ -34,9 +34,9 @@ func get_song_time_left():
 	else:
 		return INF
 
-func fade_out_music():
+func fade_out_music(time_to_fade):
 	if $AudioStreamPlayer.is_playing():
-		$Tween.interpolate_property($AudioStreamPlayer, "volume_db", 0.0, -50.0, 5.0)
+		$Tween.interpolate_property($AudioStreamPlayer, "volume_db", 0.0, -50.0, time_to_fade)
 		$Tween.start()
 
 func set_next_song(song):

@@ -30,20 +30,20 @@ func set_turrets_active(val):
 
 func _process(delta):
 	if main_phase and get_node('/root/Globals').current_song == "main" and get_node('/root/Globals').get_song_time_left() < 5.0:
-		get_node('/root/Globals').fade_out_music()
+		get_node('/root/Globals').fade_out_music(5.0)
 		get_node('/root/Globals').set_next_song("breather")
 		set_active_energy(false)
 		set_turrets_active(false)
 		main_phase = false
 		$BreatherTimer.start()
 	elif breather_phase and get_node('/root/Globals').current_song == "breather" and get_node('/root/Globals').get_song_time_left() < 5.0:
-		get_node('/root/Globals').fade_out_music()
+		get_node('/root/Globals').fade_out_music(5.0)
 		get_node('/root/Globals').set_next_song("title")
 		set_active_energy(false)
 		breather_phase = false
 		$BossTimer.start()
-	elif boss_phase and get_node('/root/Globals').current_song == "title" and get_node('/root/Globals').get_song_time_left() < 5.0:
-		get_node('/root/Globals').fade_out_music()
+	elif boss_phase and get_node('/root/Globals').current_song == "title" and get_node('/root/Globals').get_song_time_left() < 8.0:
+		get_node('/root/Globals').fade_out_music(8.0)
 		get_node('/root/Globals').set_next_song("main")
 		set_active_energy(false)
 		get_tree().get_nodes_in_group("boss")[0].fade_out()

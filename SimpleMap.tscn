@@ -69,11 +69,11 @@ shape = SubResource( 5 )
 current = true
 
 [node name="Flump" parent="." instance=ExtResource( 1 )]
-position = Vector2( -320, -96 )
+position = Vector2( -272, 32 )
 health_path = NodePath("../Health")
 
 [node name="Doople" parent="." instance=ExtResource( 2 )]
-position = Vector2( 192, -80 )
+position = Vector2( 272, 32 )
 health_path = NodePath("../Health")
 
 [node name="EnergyTimer" type="Timer" parent="."]
