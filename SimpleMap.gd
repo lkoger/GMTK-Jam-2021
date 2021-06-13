@@ -23,7 +23,7 @@ func _ready():
 	
 func set_energy_sequence_mode(mode):
 	for node in $EnergyPaths.get_children():
-		node.sequence_mode = mode
+		node.mode = mode
 
 func set_active_energy(val):
 	$Health.normal_decay_rate = val
@@ -66,21 +66,26 @@ func start_main_phase():
 	for n in range(round_number):
 		for node in $TurretPaths.get_children():
 			node.add_turret()
-	set_energy_sequence_mode(false)
+	set_energy_sequence_mode(0)
 	set_active_energy(true)
 
 func start_breather_phase():
 	breather_phase = true
 	for node in $TurretPaths.get_children():
 		node.remove_turrets()
-	set_energy_sequence_mode(true)
+	set_energy_sequence_mode(1)
 	set_active_energy(true)
 
 func start_boss_phase():
 	boss_phase = true
 	left_has_boss = not left_has_boss
-	$EnergyPaths/EnergyOrbPaths.sequence_mode = left_has_boss
-	$EnergyPaths/EnergyOrbPaths2.sequence_mode = not left_has_boss
+	if left_has_boss:
+		$EnergyPaths/EnergyOrbPaths.mode = 1
+		$EnergyPaths/EnergyOrbPaths2.mode = 2
+	else:
+		$EnergyPaths/EnergyOrbPaths.mode = 2
+		$EnergyPaths/EnergyOrbPaths2.mode = 1
+		
 	set_active_energy(true)
 	
 	var boss = boss_scene.instance()

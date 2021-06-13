@@ -132,6 +132,7 @@ position = Vector2( -272, 32 )
 
 [node name="right" type="Position2D" parent="BossSpawns"]
 position = Vector2( 272, 32 )
+
 [connection signal="timeout" from="BreatherTimer" to="." method="start_breather_phase"]
 [connection signal="timeout" from="MainTimer" to="." method="start_main_phase"]
 [connection signal="timeout" from="SurvivalTimer" to="." method="_on_SurvivalTimer_timeout"]
