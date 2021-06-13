@@ -14,6 +14,10 @@ var round_number := 1
 func _ready():
 	Globals.time_alive_score = 0
 	Globals.rounds_alive_score = 0
+	Globals.ambi_energy_collected = 0
+	Globals.dextr_energy_collected = 0
+	Globals.ambi_hits_taken = 0
+	Globals.dextr_hits_taken = 0
 	get_node('/root/Globals')._play('main')
 	set_active_energy(true)
 	

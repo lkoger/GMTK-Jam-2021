@@ -11,6 +11,8 @@ func _ready():
 func _on_Energy_body_entered(body):
 	if body is Player:
 		_transfer_energy(body)
+		body.increment_energy_collected()
+		
 
 func _transfer_energy(body):
 	body.add_energy(amount)

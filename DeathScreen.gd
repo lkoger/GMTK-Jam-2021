@@ -30,7 +30,15 @@ func _ready() -> void:
 	else:
 		$MarginContainer/CenterContainer/VBoxContainer/MiddleSection/Stats/Rounds.text = str(Globals.rounds_alive_score) + " rounds"
 	
-	print(Globals.time_alive_score)
+	#var ambi_energy_collected = 0
+	#var dextr_energy_collected = 0
+	#var ambi_hits_taken = 0
+	#var dextr_hits_taken = 0
+	
+	print(Globals.ambi_energy_collected)
+	print(Globals.dextr_energy_collected)
+	print(Globals.ambi_hits_taken)
+	print(Globals.dextr_hits_taken)
 
 
 func _on_NewGame_pressed() -> void:
