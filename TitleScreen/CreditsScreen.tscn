@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://TitleScreen/Mason.png" type="Texture" id=1]
+[ext_resource path="res://TitleScreen/Derek.png" type="Texture" id=1]
 [ext_resource path="res://TitleScreen/return_to_title.gd" type="Script" id=2]
 [ext_resource path="res://TitleScreen/Outrun future.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://TitleScreen/Cyberthrone-7nP4.ttf" type="DynamicFontData" id=4]
@@ -12,18 +12,30 @@ size = 50
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 50
+size = 30
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 50
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=4]
-size = 40
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 30
 outline_size = 1
 outline_color = Color( 0.905882, 0, 1, 1 )
@@ -46,34 +58,34 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
-margin_left = 40.0
-margin_top = 40.0
-margin_right = 1240.0
-margin_bottom = 680.0
+margin_left = 621.0
+margin_top = 17.0
+margin_right = 1860.0
+margin_bottom = 703.0
 rect_min_size = Vector2( 1200, 640 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
-margin_right = 1200.0
-margin_bottom = 640.0
+margin_right = 1239.0
+margin_bottom = 686.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
-margin_right = 1200.0
-margin_bottom = 438.0
+margin_right = 1239.0
+margin_bottom = 621.0
 custom_constants/separation = 30
 alignment = 1
 
 [node name="Derek" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 380.0
-margin_bottom = 438.0
+margin_right = 379.0
+margin_bottom = 621.0
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Derek"]
-margin_right = 380.0
+margin_right = 379.0
 margin_bottom = 380.0
 texture = ExtResource( 1 )
 
 [node name="Name" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Derek"]
 margin_top = 384.0
-margin_right = 380.0
+margin_right = 379.0
 margin_bottom = 420.0
 custom_fonts/font = SubResource( 1 )
 text = "Derek Coblentz"
@@ -84,13 +96,22 @@ __meta__ = {
 
 [node name="Description" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Derek"]
 margin_top = 424.0
-margin_right = 380.0
-margin_bottom = 438.0
+margin_right = 379.0
+margin_bottom = 621.0
+custom_fonts/font = SubResource( 2 )
+text = "All things pixel art and self-deprecation. Came
+up with the name for the game, created the level
+design, character art, and worked on various
+portions of the code. (Loves his wife)
+
+Game Jam snack of choice: Beef Jerky
+
+"
 
 [node name="Levi" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 410.0
-margin_right = 790.0
-margin_bottom = 438.0
+margin_left = 409.0
+margin_right = 789.0
+margin_bottom = 621.0
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Levi"]
 margin_right = 380.0
@@ -101,42 +122,56 @@ texture = ExtResource( 6 )
 margin_top = 384.0
 margin_right = 380.0
 margin_bottom = 420.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Levi Koger"
 align = 1
 
 [node name="Description" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Levi"]
 margin_top = 424.0
 margin_right = 380.0
-margin_bottom = 438.0
+margin_bottom = 571.0
+custom_fonts/font = SubResource( 7 )
+text = "All things code and coffee. Responsible for
+most code, character movement, AI, random
+energy paths, boss fight, round progression,
+particle effects, \"How To Play\" screen, and more.
+
+Game Jam snack of choice: XXXXXXXXX"
 
 [node name="Mason" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 820.0
-margin_right = 1200.0
-margin_bottom = 438.0
+margin_left = 819.0
+margin_right = 1239.0
+margin_bottom = 621.0
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Mason"]
-margin_right = 380.0
+margin_right = 420.0
 margin_bottom = 380.0
 texture = ExtResource( 5 )
 
 [node name="Name" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Mason"]
 margin_top = 384.0
-margin_right = 380.0
+margin_right = 420.0
 margin_bottom = 420.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Mason Stooksbury"
 align = 1
 
 [node name="Description" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Mason"]
 margin_top = 424.0
-margin_right = 380.0
-margin_bottom = 438.0
+margin_right = 420.0
+margin_bottom = 571.0
+custom_fonts/font = SubResource( 8 )
+text = "All things music and being cold. Did all of the
+music and almost all of the UI/Main menu. Wrote,
+directed, and edited the intro video. Created the Itch.io
+page and an album on SoundCloud.
+
+Game Jam snack of choice: Cheez-its and Milo's tea"
 
 [node name="Footer" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
-margin_top = 442.0
-margin_right = 1200.0
-margin_bottom = 503.0
+margin_top = 625.0
+margin_right = 1239.0
+margin_bottom = 686.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/Footer"]
 margin_right = 1139.0
@@ -150,7 +185,7 @@ margin_bottom = 61.0
 [node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/Footer/HBoxContainer/Dan"]
 margin_right = 428.0
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Voiceover provided by Dan Johnson:
 https://www.fiverr.com/danjohnsonvoice"
 
@@ -158,7 +193,7 @@ https://www.fiverr.com/danjohnsonvoice"
 margin_left = 1028.0
 margin_right = 1139.0
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Back"
 flat = true
 [connection signal="mouse_entered" from="CenterContainer/MarginContainer/VBoxContainer/Footer/HBoxContainer/Button" to="." method="_on_BackLabel_mouse_entered"]
