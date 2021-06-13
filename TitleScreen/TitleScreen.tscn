@@ -8,10 +8,12 @@
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
-font_path = "res://TitleScreen/Cyberthrone-7nP4.ttf"
+font_path = "res://TitleScreen/Outrun future.otf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 150
+size = 80
+outline_size = 1
+outline_color = Color( 1, 0, 0.992157, 1 )
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=4]
@@ -41,24 +43,24 @@ __meta__ = {
 [node name="Title" type="RichTextLabel" parent="Menu"]
 margin_right = 1120.0
 margin_bottom = 150.0
-rect_min_size = Vector2( 876, 150 )
+rect_min_size = Vector2( 1120, 150 )
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
 bbcode_enabled = true
-bbcode_text = "[center]AMB1 and D3X-TR[/center]"
-text = "AMB1 and D3X-TR"
+bbcode_text = "[wave amp=7]       AMB1 and D3X-TR"
+text = "       AMB1 and D3X-TR"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0
 margin_right = 1120.0
-margin_bottom = 580.0
+margin_bottom = 729.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 558.0
-margin_bottom = 426.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 40
@@ -71,49 +73,49 @@ margin_bottom = 60.0
 next_scene = "res://SimpleMap.tscn"
 
 [node name="HowToButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 558.0
 margin_bottom = 160.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
 next_scene = "res://TitleScreen/HowToScreen.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 200.0
 margin_right = 558.0
 margin_bottom = 260.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
 next_scene = "res://TitleScreen/SettingsScreen.tscn"
 
 [node name="CreditsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 300.0
 margin_right = 558.0
 margin_bottom = 360.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
 next_scene = "res://TitleScreen/CreditsScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 562.0
 margin_right = 1120.0
-margin_bottom = 426.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
 margin_left = 247.0
-margin_top = 181.0
+margin_top = 255.0
 margin_right = 311.0
-margin_bottom = 245.0
+margin_bottom = 319.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 
 [node name="Footer" type="Label" parent="Menu"]
-margin_top = 584.0
+margin_top = 733.0
 margin_right = 1120.0
-margin_bottom = 620.0
+margin_bottom = 769.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 3 )
 text = "Flump & Doople Games"
