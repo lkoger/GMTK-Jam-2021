@@ -12,6 +12,8 @@ var left_has_boss := true
 var round_number := 1
 
 func _ready():
+	Globals.time_alive_score = 0
+	Globals.rounds_alive_score = 0
 	get_node('/root/Globals')._play('main')
 	set_active_energy(true)
 	
@@ -35,12 +37,14 @@ func _process(delta):
 		set_active_energy(false)
 		set_turrets_active(false)
 		main_phase = false
+		Globals.increment_round_score()
 		$BreatherTimer.start()
 	elif breather_phase and get_node('/root/Globals').current_song == "breather" and get_node('/root/Globals').get_song_time_left() < 5.0:
 		get_node('/root/Globals').fade_out_music(5.0)
 		get_node('/root/Globals').set_next_song("boss")
 		set_active_energy(false)
 		breather_phase = false
+		Globals.increment_round_score()
 		$BossTimer.start()
 	elif boss_phase and get_node('/root/Globals').current_song == "boss" and get_node('/root/Globals').get_song_time_left() < 8.0:
 		get_node('/root/Globals').fade_out_music(8.0)
@@ -48,6 +52,7 @@ func _process(delta):
 		set_active_energy(false)
 		get_tree().get_nodes_in_group("boss")[0].fade_out()
 		boss_phase = false
+		Globals.increment_round_score()
 		$MainTimer.start()
 		
 
@@ -84,12 +89,6 @@ func start_boss_phase():
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+func _on_SurvivalTimer_timeout():
+	Globals.increment_time_score()

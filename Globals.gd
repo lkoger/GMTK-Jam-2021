@@ -9,6 +9,9 @@ var deathWav: AudioStream = preload("res://Music/death.wav")
 var current_song = ""
 var next_song = ""
 
+var time_alive_score = 0
+var rounds_alive_score = 0
+
 func _play(song):
 	if song != current_song:
 		current_song = song
@@ -57,3 +60,12 @@ func _on_Tween_tween_completed(object, key):
 
 func _change_music_volume(value):
 	$AudioStreamPlayer.volume_db = value
+
+
+
+func increment_time_score():
+	time_alive_score += 1
+
+func increment_round_score():
+	rounds_alive_score += 1
+

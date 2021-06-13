@@ -148,5 +148,6 @@ margin_bottom = 78.0
 custom_fonts/font = SubResource( 7 )
 text = "Main Menu"
 flat = true
+
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Footer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/Footer/TitleScreen" to="." method="_on_TitleScreen_pressed"]

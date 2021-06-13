@@ -119,6 +119,9 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="SurvivalTimer" type="Timer" parent="."]
+autostart = true
+
 [node name="BossTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -129,6 +132,8 @@ position = Vector2( -272, 32 )
 
 [node name="right" type="Position2D" parent="BossSpawns"]
 position = Vector2( 272, 32 )
+
 [connection signal="timeout" from="BreatherTimer" to="." method="start_breather_phase"]
 [connection signal="timeout" from="MainTimer" to="." method="start_main_phase"]
+[connection signal="timeout" from="SurvivalTimer" to="." method="_on_SurvivalTimer_timeout"]
 [connection signal="timeout" from="BossTimer" to="." method="start_boss_phase"]
