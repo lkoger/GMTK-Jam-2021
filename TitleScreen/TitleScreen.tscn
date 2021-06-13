@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://TitleScreen/comic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,11 +8,14 @@
 [ext_resource path="res://TitleScreen/NewGameButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=7]
 
-[sub_resource type="DynamicFont" id=1]
-size = 80
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://TitleScreen/Cyberthrone-7nP4.ttf"
 
 [sub_resource type="DynamicFont" id=2]
+size = 150
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -37,13 +40,13 @@ __meta__ = {
 margin_right = 1120.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 876, 150 )
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 5
 custom_constants/shadow_offset_y = 5
 bbcode_enabled = true
-bbcode_text = "[center]Tether[/center]"
-text = "Tether"
+bbcode_text = "[center]AMB1 and D3X-TR[/center]"
+text = "AMB1 and D3X-TR"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0
@@ -109,7 +112,7 @@ margin_top = 591.0
 margin_right = 1120.0
 margin_bottom = 620.0
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "  Flump & Doople Games"
 align = 1
 valign = 2
