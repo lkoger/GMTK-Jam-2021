@@ -32,6 +32,7 @@ extents = Vector2( 660, 10 )
 extents = Vector2( 660, 10 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 30
 outline_size = 1
 outline_color = Color( 1, 0, 0.984314, 1 )
 font_data = ExtResource( 8 )
@@ -130,10 +131,10 @@ __meta__ = {
 [node name="Health" parent="." instance=ExtResource( 7 )]
 
 [node name="Button" type="Button" parent="."]
-margin_left = 561.182
-margin_top = 311.489
-margin_right = 626.182
-margin_bottom = 346.489
+margin_left = 520.263
+margin_top = 289.777
+margin_right = 631.263
+margin_bottom = 350.777
 custom_fonts/font = SubResource( 8 )
 text = "Back"
 flat = true
