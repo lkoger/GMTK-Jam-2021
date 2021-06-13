@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://TitleScreen/Outrun future.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://TitleScreen/Cyberthrone-7nP4.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://DeathScreen.gd" type="Script" id=3]
 [ext_resource path="res://Art/DEXTR2DEAD.png" type="Texture" id=4]
+[ext_resource path="res://Art/AMBIDEAD.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -76,31 +80,37 @@ margin_bottom = 468.0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats"]
 margin_right = 192.0
-margin_bottom = 192.0
-texture = ExtResource( 4 )
+margin_bottom = 270.0
+texture = ExtResource( 5 )
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats"]
-margin_top = 196.0
+margin_top = 274.0
 margin_right = 192.0
-margin_bottom = 228.0
+margin_bottom = 321.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Labels" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats"]
-margin_bottom = 32.0
+margin_right = 125.0
+margin_bottom = 47.0
 
 [node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Labels"]
-margin_bottom = 14.0
+margin_right = 125.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 8 )
+text = "Energy Orbs"
+valign = 1
 
 [node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Labels"]
-margin_top = 18.0
-margin_bottom = 32.0
+margin_top = 33.0
+margin_right = 125.0
+margin_bottom = 47.0
 
 [node name="Numbers" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats"]
-margin_left = 4.0
-margin_right = 4.0
-margin_bottom = 32.0
+margin_left = 129.0
+margin_right = 129.0
+margin_bottom = 47.0
 
 [node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Numbers"]
 margin_bottom = 14.0

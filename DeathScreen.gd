@@ -23,13 +23,13 @@ func _ready() -> void:
 	else:
 		final_time_text += str(seconds) + " seconds "
 	
-	$MarginContainer/CenterContainer/VBoxContainer/MiddleSection/Stats/Time.text = final_time_text
-	
+	$MarginContainer/CenterContainer/HBoxContainer/TotalStats/MiddleSection/Stats/Time.text = final_time_text
+
 	if(Globals.rounds_alive_score == 1):
-		$MarginContainer/CenterContainer/VBoxContainer/MiddleSection/Stats/Rounds.text = str(Globals.rounds_alive_score) + " round"
+		$MarginContainer/CenterContainer/HBoxContainer/TotalStats/MiddleSection/Stats/Rounds.text = str(Globals.rounds_alive_score) + " round"
 	else:
-		$MarginContainer/CenterContainer/VBoxContainer/MiddleSection/Stats/Rounds.text = str(Globals.rounds_alive_score) + " rounds"
-	
+		$MarginContainer/CenterContainer/HBoxContainer/TotalStats/MiddleSection/Stats/Rounds.text = str(Globals.rounds_alive_score) + " rounds"
+
 	#var ambi_energy_collected = 0
 	#var dextr_energy_collected = 0
 	#var ambi_hits_taken = 0

@@ -19,23 +19,23 @@ font_data = ExtResource( 4 )
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 30
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=4]
-size = 50
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=8]
 size = 30
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 40
+size = 50
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 30
 outline_size = 1
 outline_color = Color( 0.905882, 0, 1, 1 )
@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
-margin_left = 621.0
+margin_left = 20.0
 margin_top = 17.0
-margin_right = 1860.0
+margin_right = 1259.0
 margin_bottom = 703.0
 rect_min_size = Vector2( 1200, 640 )
 
@@ -130,13 +130,13 @@ align = 1
 margin_top = 424.0
 margin_right = 380.0
 margin_bottom = 571.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 text = "All things code and coffee. Responsible for
 most code, character movement, AI, random
 energy paths, boss fight, round progression,
 particle effects, \"How To Play\" screen, and more.
 
-Game Jam snack of choice: XXXXXXXXX"
+Game Jam snack of choice: Swiss Rolls"
 
 [node name="Mason" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 819.0
@@ -152,7 +152,7 @@ texture = ExtResource( 5 )
 margin_top = 384.0
 margin_right = 420.0
 margin_bottom = 420.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Mason Stooksbury"
 align = 1
 
@@ -160,7 +160,7 @@ align = 1
 margin_top = 424.0
 margin_right = 420.0
 margin_bottom = 571.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "All things music and being cold. Did all of the
 music and almost all of the UI/Main menu. Wrote,
 directed, and edited the intro video. Created the Itch.io
@@ -185,7 +185,7 @@ margin_bottom = 61.0
 [node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/Footer/HBoxContainer/Dan"]
 margin_right = 428.0
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Voiceover provided by Dan Johnson:
 https://www.fiverr.com/danjohnsonvoice"
 
@@ -193,7 +193,7 @@ https://www.fiverr.com/danjohnsonvoice"
 margin_left = 1028.0
 margin_right = 1139.0
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Back"
 flat = true
 [connection signal="mouse_entered" from="CenterContainer/MarginContainer/VBoxContainer/Footer/HBoxContainer/Button" to="." method="_on_BackLabel_mouse_entered"]
