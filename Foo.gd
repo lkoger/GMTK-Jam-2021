@@ -5,7 +5,7 @@ var target = null
 var velocity := Vector2.ZERO
 var speed := 500.0
 var direction := Vector2.ZERO
-var damage := 10.0
+var damage := 0.0
 
 func _ready():
 	assert(is_instance_valid(target))

@@ -70,24 +70,26 @@ health_path = NodePath("../Health")
 position = Vector2( 192, -80 )
 health_path = NodePath("../Health")
 
-[node name="FooPath" parent="." instance=ExtResource( 9 )]
-turret = ExtResource( 8 )
-foobar = ExtResource( 3 )
-target_path = NodePath("../Flump")
-world_path = NodePath("..")
-
-[node name="FooPath2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 280, 0 )
-turret = ExtResource( 8 )
-foobar = ExtResource( 3 )
-target_path = NodePath("../Doople")
-world_path = NodePath("..")
-
 [node name="EnergyTimer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
+
+[node name="TurretPaths" type="Node2D" parent="."]
+
+[node name="FooPath" parent="TurretPaths" instance=ExtResource( 9 )]
+turret = ExtResource( 8 )
+foobar = ExtResource( 3 )
+target_path = NodePath("../../Flump")
+world_path = NodePath("../..")
+
+[node name="FooPath2" parent="TurretPaths" instance=ExtResource( 9 )]
+position = Vector2( 280, 0 )
+turret = ExtResource( 8 )
+foobar = ExtResource( 3 )
+target_path = NodePath("../../Doople")
+world_path = NodePath("../..")
 
 [node name="EnergyPaths" type="Node2D" parent="."]
 
@@ -96,3 +98,14 @@ position = Vector2( 272, 32 )
 
 [node name="EnergyOrbPaths2" parent="EnergyPaths" instance=ExtResource( 10 )]
 position = Vector2( -272, 32 )
+
+[node name="BreatherTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="MainTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="BreatherTimer" to="." method="start_breather_phase"]
+[connection signal="timeout" from="MainTimer" to="." method="start_main_phase"]

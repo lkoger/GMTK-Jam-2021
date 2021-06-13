@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://EnergyOrbPaths.gd" type="Script" id=1]
 [ext_resource path="res://EnergyPath2D.gd" type="Script" id=2]
@@ -21,6 +21,11 @@ _data = {
 [sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -192, 256, 0, 0, 0, 0, 192, 256, 0, 0, 0, 0, 192, 128, 0, 0, 0, 0, -192, 128, 0, 0, 0, 0, -192, 0, 0, 0, 0, 0, 192, 0, 0, 0, 0, 0, 192, -128, 0, 0, 0, 0, -192, -128, 0, 0, 0, 0, -192, -256, 0, 0, 0, 0, 192, -256 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, -8, 0, 0, 0, 0, -8, -16, 0, 0, 0, 0, 0, -24, 0, 0, 0, 0, 8, -24, 0, 0, 0, 0, 16, -24, 0, 0, 0, 0, 24, -16, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 24, 8, 0, 0, 0, 0, 8, 16, 0, 0, 0, 0, -8, 24, 0, 0, 0, 0, -24, 8, 0, 0, 0, 0, -32, -8, 0, 0, 0, 0, -24, -32, 0, 0, 0, 0, 0, -48, 0, 0, 0, 0, 24, -40, 0, 0, 0, 0, 48, -24, 0, 0, 0, 0, 56, 0, 0, 0, 0, 0, 48, 24, 0, 0, 0, 0, 24, 40, 0, 0, 0, 0, 0, 48, 0, 0, 0, 0, -32, 40, 0, 0, 0, 0, -48, 24, 0, 0, 0, 0, -56, -8, 0, 0, 0, 0, -48, -32, 0, 0, 0, 0, -32, -56, 0, 0, 0, 0, -8, -72, 0, 0, 0, 0, 24, -64, 0, 0, 0, 0, 48, -48, 0, 0, 0, 0, 64, -32, 0, 0, 0, 0, 80, -8, 0, 0, 0, 0, 72, 24, 0, 0, 0, 0, 64, 48, 0, 0, 0, 0, 40, 64, 0, 0, 0, 0, 16, 72, 0, 0, 0, 0, -24, 64, 0, 0, 0, 0, -56, 48, 0, 0, 0, 0, -72, 24, 0, 0, 0, 0, -72, -24, 0, 0, 0, 0, -56, -56, 0, 0, 0, 0, -32, -80, 0, 0, 0, 0, 0, -96, 0, 0, 0, 0, 48, -80, 0, 0, 0, 0, 80, -48, 0, 0, 0, 0, 96, -24, 0, 0, 0, 0, 104, 8, 0, 0, 0, 0, 96, 48, 0, 0, 0, 0, 64, 88, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, -40, 88, 0, 0, 0, 0, -80, 56, 0, 0, 0, 0, -96, 8, 0, 0, 0, 0, -88, -40, 0, 0, 0, 0, -64, -80, 0, 0, 0, 0, -32, -104, 0, 0, 0, 0, 8, -120, 0, 0, 0, 0, 64, -96, 0, 0, 0, 0, 96, -72, 0, 0, 0, 0, 120, -40, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 120, 48, 0, 0, 0, 0, 104, 88, 0, 0, 0, 0, 72, 120, 0, 0, 0, 0, 8, 128, 0, 0, 0, 0, -48, 120, 0, 0, 0, 0, -88, 96, 0, 0, 0, 0, -120, 48, 0, 0, 0, 0, -128, -32, 0, 0, 0, 0, -104, -88, 0, 0, 0, 0, -64, -120, 0, 0, 0, 0, 0, -144 )
 }
 
 [sub_resource type="Curve2D" id=5]
@@ -54,7 +59,6 @@ __meta__ = {
 }
 
 [node name="PatternedPaths" type="Node2D" parent="."]
-visible = false
 
 [node name="ZigZagPath1" type="Path2D" parent="PatternedPaths"]
 visible = false
@@ -80,6 +84,7 @@ position = Vector2( -192, 256 )
 rotation = -0.315618
 
 [node name="RectanglePath" type="Path2D" parent="PatternedPaths"]
+visible = false
 curve = SubResource( 3 )
 script = ExtResource( 2 )
 
@@ -106,26 +111,23 @@ position = Vector2( -192, 256 )
 
 [node name="CircularPath1" type="Path2D" parent="PatternedPaths"]
 visible = false
-curve = SubResource( 5 )
+curve = SubResource( 6 )
 script = ExtResource( 2 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/CircularPath1"]
-position = Vector2( 0, -8 )
-rotation = 3.14159
+rotation = -2.35619
 
 [node name="CircularPath2" type="Path2D" parent="PatternedPaths"]
 visible = false
 scale = Vector2( -1, 1 )
-curve = SubResource( 5 )
+curve = SubResource( 6 )
 script = ExtResource( 2 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="PatternedPaths/CircularPath2"]
-position = Vector2( 0, -8 )
-rotation = 3.14159
+rotation = -2.35619
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
+wait_time = 20.0
 
 [node name="StandardPath" type="Path2D" parent="."]
 visible = false
@@ -136,7 +138,8 @@ energy_amount_per_ball = 10.0
 energy_life_time = 5.0
 
 [node name="SpawnLocation" type="PathFollow2D" parent="StandardPath"]
+visible = false
 position = Vector2( 0, -8 )
 rotation = 3.14159
 
-[connection signal="timeout" from="Timer" to="." method="spawn_random_ball"]
+[connection signal="timeout" from="Timer" to="." method="spawn"]
