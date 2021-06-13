@@ -6,47 +6,47 @@
 [ext_resource path="res://Art/DEXTR2DEAD.png" type="Texture" id=4]
 [ext_resource path="res://Art/AMBIDEAD.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 20
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=11]
-size = 20
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=1]
-size = 100
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 80
-font_data = ExtResource( 2 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 80
-font_data = ExtResource( 2 )
+size = 20
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 80
-font_data = ExtResource( 2 )
+size = 20
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 80
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
 size = 40
 outline_size = 1
 outline_color = Color( 1, 0, 0.984314, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=11]
 size = 40
 outline_size = 1
 outline_color = Color( 0.87451, 0, 1, 1 )
@@ -65,24 +65,23 @@ main_menu = "res://TitleScreen/TitleScreen.tscn"
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 60.0
-margin_top = 60.0
-margin_right = -60.0
-margin_bottom = -60.0
+margin_left = 32.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = -40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
-margin_right = 1163.0
-margin_bottom = 468.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
+margin_right = 1208.0
+margin_bottom = 640.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
-margin_left = 1.0
-margin_right = 1161.0
-margin_bottom = 468.0
+margin_left = 24.0
+margin_top = 86.0
+margin_right = 1184.0
+margin_bottom = 554.0
 custom_constants/separation = 90
 
 [node name="AMB1sStats" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
@@ -112,7 +111,7 @@ alignment = 1
 margin_top = 8.0
 margin_right = 133.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 1 )
 text = "Energy Orbs:"
 valign = 1
 
@@ -120,7 +119,7 @@ valign = 1
 margin_top = 41.0
 margin_right = 133.0
 margin_bottom = 70.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "Damage Taken:"
 valign = 1
 
@@ -134,7 +133,7 @@ alignment = 1
 modulate = Color( 0.945098, 0, 1, 1 )
 margin_right = 28.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 text = "4"
 align = 2
 valign = 1
@@ -144,7 +143,7 @@ modulate = Color( 1, 0, 0, 1 )
 margin_top = 41.0
 margin_right = 28.0
 margin_bottom = 78.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 4 )
 text = "44"
 align = 2
 valign = 1
@@ -161,7 +160,7 @@ modulate = Color( 0.752941, 0, 0, 1 )
 margin_right = 558.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 100, 0 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 text = "You Died"
 align = 1
 
@@ -180,7 +179,7 @@ margin_bottom = 118.0
 [node name="Time" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/TotalStats/MiddleSection/Labels"]
 margin_right = 279.0
 margin_bottom = 57.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 6 )
 text = "You lasted:"
 valign = 1
 
@@ -188,7 +187,7 @@ valign = 1
 margin_top = 61.0
 margin_right = 279.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
 text = "You survived:"
 valign = 1
 
@@ -200,7 +199,7 @@ margin_bottom = 118.0
 [node name="Time" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/TotalStats/MiddleSection/Stats"]
 margin_right = 193.0
 margin_bottom = 57.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 8 )
 text = "4 minutes"
 align = 2
 valign = 1
@@ -209,7 +208,7 @@ valign = 1
 margin_top = 61.0
 margin_right = 193.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 9 )
 text = "5 rounds"
 align = 2
 valign = 1
@@ -251,7 +250,7 @@ alignment = 1
 [node name="NewGame" type="Button" parent="MarginContainer/CenterContainer/HBoxContainer/TotalStats/Footer"]
 margin_right = 231.0
 margin_bottom = 78.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 text = "New Game"
 flat = true
 
@@ -259,21 +258,21 @@ flat = true
 margin_left = 331.0
 margin_right = 558.0
 margin_bottom = 78.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 11 )
 text = "Main Menu"
 flat = true
 
-[node name="D3X-TRsStats" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
+[node name="D3XTRsStats" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
 margin_left = 949.0
 margin_right = 1160.0
 margin_bottom = 468.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats"]
 margin_right = 211.0
 margin_bottom = 192.0
 texture = ExtResource( 4 )
 
-[node name="Stats" type="HBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats"]
+[node name="Stats" type="HBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats"]
 margin_top = 196.0
 margin_right = 211.0
 margin_bottom = 274.0
@@ -282,48 +281,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Labels" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats"]
+[node name="Labels" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats/Stats"]
 margin_right = 133.0
 margin_bottom = 78.0
 alignment = 1
 
-[node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Labels"]
+[node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats/Stats/Labels"]
 margin_top = 8.0
 margin_right = 133.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 1 )
 text = "Energy Orbs:"
 valign = 1
 
-[node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Labels"]
+[node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats/Stats/Labels"]
 margin_top = 41.0
 margin_right = 133.0
 margin_bottom = 70.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "Damage Taken:"
 valign = 1
 
-[node name="Numbers" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats"]
+[node name="Numbers" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats/Stats"]
 margin_left = 183.0
 margin_right = 211.0
 margin_bottom = 78.0
 alignment = 1
 
-[node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Numbers"]
+[node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats/Stats/Numbers"]
 modulate = Color( 0, 0.584314, 0.0509804, 1 )
 margin_right = 28.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 text = "4"
 align = 2
 valign = 1
 
-[node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Numbers"]
+[node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3XTRsStats/Stats/Numbers"]
 modulate = Color( 1, 0, 0, 1 )
 margin_top = 41.0
 margin_right = 28.0
 margin_bottom = 78.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 4 )
 text = "44"
 align = 2
 valign = 1
