@@ -45,3 +45,6 @@ func set_next_song(song):
 
 func _on_Tween_tween_completed(object, key):
 	$AudioStreamPlayer.volume_db = 0.0
+
+func _change_music_volume(value):
+	$AudioStreamPlayer.volume_db = value

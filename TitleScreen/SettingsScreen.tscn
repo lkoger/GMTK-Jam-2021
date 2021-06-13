@@ -56,21 +56,14 @@ alignment = 1
 margin_left = 7.0
 margin_right = 387.0
 margin_bottom = 188.0
+alignment = 1
 
 [node name="MusicLabel" type="Label" parent="CenterContainer/MarginContainer/Main/HBox/Labels"]
+margin_top = 48.0
 margin_right = 380.0
-margin_bottom = 92.0
+margin_bottom = 140.0
 custom_fonts/font = SubResource( 2 )
 text = "Music  Volume"
-align = 1
-valign = 1
-
-[node name="SFXLabel" type="Label" parent="CenterContainer/MarginContainer/Main/HBox/Labels"]
-margin_top = 96.0
-margin_right = 380.0
-margin_bottom = 188.0
-custom_fonts/font = SubResource( 2 )
-text = "SFX  Volume"
 align = 1
 valign = 1
 
@@ -83,21 +76,13 @@ alignment = 2
 
 [node name="MusicSlider" type="HSlider" parent="CenterContainer/MarginContainer/Main/HBox/Sliders"]
 margin_right = 606.0
-margin_bottom = 92.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 606, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+min_value = -25.0
+max_value = 5.0
 step = 5.0
-value = 60.0
-
-[node name="SFXSlider" type="HSlider" parent="CenterContainer/MarginContainer/Main/HBox/Sliders"]
-margin_top = 96.0
-margin_right = 606.0
-margin_bottom = 188.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-step = 5.0
-value = 60.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer/Main"]
 margin_top = 238.0
@@ -114,3 +99,5 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 4 )
 text = "Back"
+[connection signal="value_changed" from="CenterContainer/MarginContainer/Main/HBox/Sliders/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/Main/HBoxContainer/Button" to="." method="_on_Button_pressed"]
