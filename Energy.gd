@@ -4,8 +4,9 @@ var amount := 10.0
 var lifetime := 5.0
 
 func _ready():
-	$LifeTimer.wait_time = lifetime
-	$LifeTimer.start()
+	if lifetime > 0.0:
+		$LifeTimer.wait_time = lifetime
+		$LifeTimer.start()
 
 func _on_Energy_body_entered(body):
 	if body is Player:

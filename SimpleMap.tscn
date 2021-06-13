@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
+[ext_resource path="res://D3X-TR.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AMB1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Foo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SimpleMap.gd" type="Script" id=4]
 [ext_resource path="res://Art/Background-Underground.png" type="Texture" id=5]
@@ -32,8 +32,8 @@ z_index = -1
 script = ExtResource( 4 )
 foobar = ExtResource( 3 )
 energy_ball = ExtResource( 6 )
-flump_target_path = NodePath("Flump")
-doople_target_path = NodePath("Doople")
+flump_target_path = NodePath("D3X-TR")
+doople_target_path = NodePath("AMB1")
 
 [node name="PauseCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -68,12 +68,12 @@ shape = SubResource( 5 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Flump" parent="." instance=ExtResource( 1 )]
-position = Vector2( -272, 32 )
+[node name="D3X-TR" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 32 )
 health_path = NodePath("../Health")
 
-[node name="Doople" parent="." instance=ExtResource( 2 )]
-position = Vector2( 272, 32 )
+[node name="AMB1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -272, 32 )
 health_path = NodePath("../Health")
 
 [node name="EnergyTimer" type="Timer" parent="."]
@@ -87,14 +87,14 @@ autostart = true
 [node name="FooPath" parent="TurretPaths" instance=ExtResource( 9 )]
 turret = ExtResource( 8 )
 foobar = ExtResource( 3 )
-target_path = NodePath("../../Flump")
+target_path = NodePath("../../AMB1")
 world_path = NodePath("../..")
 
 [node name="FooPath2" parent="TurretPaths" instance=ExtResource( 9 )]
 position = Vector2( 280, 0 )
 turret = ExtResource( 8 )
 foobar = ExtResource( 3 )
-target_path = NodePath("../../Doople")
+target_path = NodePath("../../D3X-TR")
 world_path = NodePath("../..")
 
 [node name="EnergyPaths" type="Node2D" parent="."]
