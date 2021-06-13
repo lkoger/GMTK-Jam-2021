@@ -1,13 +1,15 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Flump.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Doople.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Foo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SimpleMap.gd" type="Script" id=4]
-[ext_resource path="res://Art/Background-Dirt.png" type="Texture" id=5]
+[ext_resource path="res://Art/Background-Underground.png" type="Texture" id=5]
 [ext_resource path="res://Energy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Art/Triangle Enemy.png" type="Texture" id=8]
+[ext_resource path="res://Turret.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TurretPath.tscn" type="PackedScene" id=9]
+[ext_resource path="res://EnergyOrbPaths.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360.303 )
@@ -23,32 +25,6 @@ extents = Vector2( 548.805, 10 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 548.24, 10 )
-
-[sub_resource type="Curve2D" id=6]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -224, -328, 0, 0, 0, 0, 224, -328, 0, 0, 0, 0, 216, 336, 0, 0, 0, 0, -224, 336, 0, 0, 0, 0, -224, -328 )
-}
-
-[sub_resource type="ParticlesMaterial" id=7]
-emission_shape = 1
-emission_sphere_radius = 16.0
-flag_disable_z = true
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 4.0
-color = Color( 0.235294, 0.0196078, 0.0196078, 1 )
-
-[sub_resource type="Curve2D" id=8]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -224, -264, 0, 0, 0, 0, -224, -336, 0, 0, 0, 0, -16, -336, 0, 0, 0, 0, 216, -336, 0, 0, 0, 0, 216, -264, 0, 0, 0, 0, 216, 264, 0, 0, 0, 0, 216, 336, 0, 0, 0, 0, -24, 336, 0, 0, 0, 0, -224, 336, 0, 0, 0, 0, -224, 264, 0, 0, 0, 0, -224, -264 )
-}
-
-[sub_resource type="Curve2D" id=9]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -168, -296, 0, 0, 0, 0, 152, -232, 0, 0, 0, 0, -168, -168, 0, 0, 0, 0, 152, -104, 0, 0, 0, 0, -168, -40, 0, 0, 0, 0, 152, 24, 0, 0, 0, 0, -168, 80, 0, 0, 0, 0, 152, 152, 0, 0, 0, 0, -160, 208, 0, 0, 0, 0, 152, 272, 0, 0, 0, 0, -168, 288, 0, 0, 0, 0, 144, 208, 0, 0, 0, 0, -168, 144, 0, 0, 0, 0, 152, 72, 0, 0, 0, 0, -168, 16, 0, 0, 0, 0, 144, -48, 0, 0, 0, 0, -160, -104, 0, 0, 0, 0, 152, -184, 0, 0, 0, 0, -168, -240, 0, 0, 0, 0, 152, -296, 0, 0, 0, 0, -168, -296 )
-}
 
 [node name="SimpleMap" type="Node2D"]
 z_index = -1
@@ -80,7 +56,7 @@ position = Vector2( 0, 370 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, -370 )
+position = Vector2( 0, -312 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -94,77 +70,42 @@ health_path = NodePath("../Health")
 position = Vector2( 192, -80 )
 health_path = NodePath("../Health")
 
-[node name="FooPath" type="Path2D" parent="."]
-position = Vector2( -280, 0 )
-curve = SubResource( 6 )
-
-[node name="FooSpawnLocation" type="PathFollow2D" parent="FooPath"]
-position = Vector2( -224, -328 )
-
-[node name="Sprite" type="Sprite" parent="FooPath/FooSpawnLocation"]
-rotation = 1.01229
-texture = ExtResource( 8 )
-
-[node name="Particles2D" type="Particles2D" parent="FooPath/FooSpawnLocation/Sprite"]
-position = Vector2( 0.243469, -0.0422668 )
-emitting = false
-amount = 64
-one_shot = true
-local_coords = false
-process_material = SubResource( 7 )
-
-[node name="Turret" type="Node2D" parent="FooPath/FooSpawnLocation"]
-
-[node name="BarPath" type="Path2D" parent="."]
-position = Vector2( 280, 0 )
-curve = SubResource( 8 )
-
-[node name="BarSpawnLocation" type="PathFollow2D" parent="BarPath"]
-position = Vector2( -224, -264 )
-rotation = -1.5708
-
-[node name="Sprite" type="Sprite" parent="BarPath/BarSpawnLocation"]
-rotation = 1.76819
-texture = ExtResource( 8 )
-
-[node name="Particles2D" type="Particles2D" parent="BarPath/BarSpawnLocation/Sprite"]
-position = Vector2( 0.243, -0.042 )
-rotation = 0.814897
-emitting = false
-amount = 64
-one_shot = true
-local_coords = false
-process_material = SubResource( 7 )
-
-[node name="MobTimer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
-
-[node name="MobTimer2" type="Timer" parent="."]
-one_shot = true
-
 [node name="EnergyTimer" type="Timer" parent="."]
 wait_time = 4.0
 autostart = true
 
-[node name="EnergyOrbPath" type="Path2D" parent="."]
-position = Vector2( -280, 0 )
-curve = SubResource( 9 )
-
-[node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath"]
-position = Vector2( -168, -296 )
-rotation = 0.197394
-
-[node name="EnergyOrbPath2" type="Path2D" parent="."]
-position = Vector2( 280, 0 )
-curve = SubResource( 9 )
-
-[node name="SpawnLocation" type="PathFollow2D" parent="EnergyOrbPath2"]
-position = Vector2( -168, -296 )
-rotation = 0.197394
-
 [node name="Health" parent="." instance=ExtResource( 7 )]
-[connection signal="timeout" from="MobTimer" to="." method="_spawn_foo_bar"]
-[connection signal="timeout" from="MobTimer2" to="." method="_spawn_foo_bar2"]
-[connection signal="timeout" from="EnergyTimer" to="." method="_spawn_energy"]
+
+[node name="TurretPaths" type="Node2D" parent="."]
+
+[node name="FooPath" parent="TurretPaths" instance=ExtResource( 9 )]
+turret = ExtResource( 8 )
+foobar = ExtResource( 3 )
+target_path = NodePath("../../Flump")
+world_path = NodePath("../..")
+
+[node name="FooPath2" parent="TurretPaths" instance=ExtResource( 9 )]
+position = Vector2( 280, 0 )
+turret = ExtResource( 8 )
+foobar = ExtResource( 3 )
+target_path = NodePath("../../Doople")
+world_path = NodePath("../..")
+
+[node name="EnergyPaths" type="Node2D" parent="."]
+
+[node name="EnergyOrbPaths" parent="EnergyPaths" instance=ExtResource( 10 )]
+position = Vector2( 272, 32 )
+
+[node name="EnergyOrbPaths2" parent="EnergyPaths" instance=ExtResource( 10 )]
+position = Vector2( -272, 32 )
+
+[node name="BreatherTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="MainTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="BreatherTimer" to="." method="start_breather_phase"]
+[connection signal="timeout" from="MainTimer" to="." method="start_main_phase"]
