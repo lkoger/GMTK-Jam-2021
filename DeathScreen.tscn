@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://TitleScreen/Outrun future.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://TitleScreen/Cyberthrone-7nP4.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,17 @@
 [ext_resource path="res://Art/AMBIDEAD.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=1]
@@ -63,65 +74,84 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
-margin_right = 1160.0
+margin_right = 1163.0
 margin_bottom = 468.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
-margin_left = 19.0
-margin_right = 1141.0
+margin_left = 1.0
+margin_right = 1161.0
 margin_bottom = 468.0
 custom_constants/separation = 90
 
 [node name="AMB1sStats" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
-margin_right = 192.0
+margin_right = 211.0
 margin_bottom = 468.0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats"]
-margin_right = 192.0
-margin_bottom = 270.0
+margin_right = 211.0
+margin_bottom = 192.0
 texture = ExtResource( 5 )
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats"]
-margin_top = 274.0
-margin_right = 192.0
-margin_bottom = 321.0
+margin_top = 196.0
+margin_right = 211.0
+margin_bottom = 274.0
+custom_constants/separation = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Labels" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats"]
-margin_right = 125.0
-margin_bottom = 47.0
+margin_right = 133.0
+margin_bottom = 78.0
+alignment = 1
 
 [node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Labels"]
-margin_right = 125.0
-margin_bottom = 29.0
+margin_top = 8.0
+margin_right = 133.0
+margin_bottom = 37.0
 custom_fonts/font = SubResource( 8 )
-text = "Energy Orbs"
+text = "Energy Orbs:"
 valign = 1
 
 [node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Labels"]
-margin_top = 33.0
-margin_right = 125.0
-margin_bottom = 47.0
+margin_top = 41.0
+margin_right = 133.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 9 )
+text = "Damage Taken:"
+valign = 1
 
 [node name="Numbers" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats"]
-margin_left = 129.0
-margin_right = 129.0
-margin_bottom = 47.0
+margin_left = 183.0
+margin_right = 211.0
+margin_bottom = 78.0
+alignment = 1
 
 [node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Numbers"]
-margin_bottom = 14.0
+modulate = Color( 0.945098, 0, 1, 1 )
+margin_right = 28.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 10 )
+text = "4"
+align = 2
+valign = 1
 
 [node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/AMB1sStats/Stats/Numbers"]
-margin_top = 18.0
-margin_bottom = 32.0
+modulate = Color( 1, 0, 0, 1 )
+margin_top = 41.0
+margin_right = 28.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 11 )
+text = "44"
+align = 2
+valign = 1
 
 [node name="TotalStats" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
-margin_left = 282.0
-margin_right = 840.0
+margin_left = 301.0
+margin_right = 859.0
 margin_bottom = 468.0
 custom_constants/separation = 20
 alignment = 1
@@ -234,40 +264,68 @@ text = "Main Menu"
 flat = true
 
 [node name="D3X-TRsStats" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer"]
-margin_left = 930.0
-margin_right = 1122.0
+margin_left = 949.0
+margin_right = 1160.0
 margin_bottom = 468.0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats"]
-margin_right = 192.0
+margin_right = 211.0
 margin_bottom = 192.0
 texture = ExtResource( 4 )
 
 [node name="Stats" type="HBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats"]
 margin_top = 196.0
-margin_right = 192.0
-margin_bottom = 228.0
+margin_right = 211.0
+margin_bottom = 274.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Labels" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats"]
-margin_bottom = 32.0
+margin_right = 133.0
+margin_bottom = 78.0
+alignment = 1
 
 [node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Labels"]
-margin_bottom = 14.0
+margin_top = 8.0
+margin_right = 133.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 8 )
+text = "Energy Orbs:"
+valign = 1
 
 [node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Labels"]
-margin_top = 18.0
-margin_bottom = 32.0
+margin_top = 41.0
+margin_right = 133.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 9 )
+text = "Damage Taken:"
+valign = 1
 
 [node name="Numbers" type="VBoxContainer" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats"]
-margin_left = 4.0
-margin_right = 4.0
-margin_bottom = 32.0
+margin_left = 183.0
+margin_right = 211.0
+margin_bottom = 78.0
+alignment = 1
 
 [node name="Energy" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Numbers"]
-margin_bottom = 14.0
+modulate = Color( 0, 0.584314, 0.0509804, 1 )
+margin_right = 28.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 10 )
+text = "4"
+align = 2
+valign = 1
 
 [node name="Damage" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer/D3X-TRsStats/Stats/Numbers"]
-margin_top = 18.0
-margin_bottom = 32.0
+modulate = Color( 1, 0, 0, 1 )
+margin_top = 41.0
+margin_right = 28.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 11 )
+text = "44"
+align = 2
+valign = 1
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/TotalStats/Footer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="MarginContainer/CenterContainer/HBoxContainer/TotalStats/Footer/TitleScreen" to="." method="_on_TitleScreen_pressed"]
