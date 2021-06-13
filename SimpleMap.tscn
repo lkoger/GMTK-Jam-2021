@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://D3X-TR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://AMB1.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://TurretPath.tscn" type="PackedScene" id=9]
 [ext_resource path="res://EnergyOrbPaths.tscn" type="PackedScene" id=10]
 [ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://RoundIndicatorScreen.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 360.303 )
@@ -34,6 +35,11 @@ foobar = ExtResource( 3 )
 energy_ball = ExtResource( 6 )
 flump_target_path = NodePath("D3X-TR")
 doople_target_path = NodePath("AMB1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RoundIndicatorScreen" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
 
 [node name="PauseCanvasLayer" type="CanvasLayer" parent="."]
 
