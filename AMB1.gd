@@ -42,3 +42,10 @@ func _change_state(new_state):
 	if new_state != state:
 		state = new_state
 		$AnimatedSprite.play(state)
+
+
+func increment_energy_collected():
+	Globals.ambi_energy_collected += 1
+
+func increment_hits_taken():
+	Globals.ambi_hits_taken += 1

@@ -9,4 +9,3 @@ func ready():
 
 func add_energy(amnt):
 	health.add_energy(amnt)
-

@@ -44,4 +44,5 @@ func _on_Timer_timeout():
 func _on_Area2D_body_entered(body):
 	if body is Player:
 		body.add_energy(-damage)
+		body.increment_hits_taken()
 	queue_free()

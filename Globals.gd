@@ -12,6 +12,12 @@ var next_song = ""
 var time_alive_score = 0
 var rounds_alive_score = 0
 
+var ambi_energy_collected = 0
+var dextr_energy_collected = 0
+var ambi_hits_taken = 0
+var dextr_hits_taken = 0
+
+
 func _play(song):
 	if song != current_song:
 		current_song = song
