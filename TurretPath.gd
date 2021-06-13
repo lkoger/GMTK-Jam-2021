@@ -19,8 +19,8 @@ func add_turret():
 	t.foobar = foobar
 	t.target = target
 	t.world = world
-	t.set_active(true)
 	add_child(t)
+	t.set_active(true)
 
 func remove_turrets():
 	for node in get_children():

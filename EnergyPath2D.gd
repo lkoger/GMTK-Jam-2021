@@ -14,7 +14,7 @@ func spawn_random_ball():
 	var e = energy_ball.instance()
 	pathf.offset = randi()
 	e.global_position = pathf.global_position
-	get_tree().root.add_child(e)
+	get_tree().root.call_deferred("add_child", e)
 
 func spawn_uniform_sequence():
 	for i in range(num_energy_balls):
