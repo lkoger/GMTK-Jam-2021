@@ -11,8 +11,7 @@ onready var world = get_node(world_path)
 export var num_turrets := 1
 
 func _ready():
-	for n in range(num_turrets):
-		add_turret()
+	pass
 
 func add_turret():
 	var t = turret.instance()

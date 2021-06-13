@@ -17,6 +17,7 @@ color = Color( 0.235294, 0.0196078, 0.0196078, 1 )
 [sub_resource type="CapsuleShape2D" id=2]
 
 [node name="Turret" type="PathFollow2D"]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -224, -328 )
 script = ExtResource( 2 )
 

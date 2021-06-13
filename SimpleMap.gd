@@ -5,11 +5,11 @@ export (PackedScene) var energy_ball
 var boss_scene = preload("res://Boss.tscn")
 export var flump_target_path : NodePath = ""
 export var doople_target_path : NodePath = ""
-var main_phase := true
+var main_phase := false
 var breather_phase := false
 var boss_phase := false
 var left_has_boss := true
-var round_number := 1
+export var round_number := 0
 onready var round_indicator = $RoundIndicatorCanvasLayer/RoundIndicatorScreen
 
 func _ready():
@@ -20,8 +20,7 @@ func _ready():
 	Globals.ambi_hits_taken = 0
 	Globals.dextr_hits_taken = 0
 	get_node('/root/Globals')._play('main')
-	set_active_energy(true)
-	round_indicator.show_round()
+	#set_active_energy(true)
 	
 func set_energy_sequence_mode(mode):
 	for node in $EnergyPaths.get_children():
@@ -60,6 +59,8 @@ func _process(delta):
 		boss_phase = false
 		Globals.increment_round_score()
 		$MainTimer.start()
+#	elif not main_phase and not breather_phase and not boss_phase:
+#		start_main_phase()
 		
 
 func start_main_phase():
