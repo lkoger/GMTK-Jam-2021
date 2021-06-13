@@ -22,7 +22,7 @@ func _play(song):
 
 
 func _on_AudioStreamPlayer_finished():
-	if next_song:
+	if next_song != "":
 		_play(next_song)
 		next_song = ""
 	else:
@@ -32,7 +32,7 @@ func get_song_time_left():
 	if $AudioStreamPlayer.playing:
 		return $AudioStreamPlayer.stream.get_length() - $AudioStreamPlayer.get_playback_position()
 	else:
-		return 0.0
+		return INF
 
 func fade_out_music():
 	if $AudioStreamPlayer.is_playing():
