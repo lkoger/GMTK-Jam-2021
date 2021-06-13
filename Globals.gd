@@ -3,6 +3,7 @@ extends Node2D
 var titleScreenWav: AudioStream = preload("res://Music/title-screen-loop.wav")
 var mainWav: AudioStream = preload("res://Music/main-loop.wav")
 var breatherRoundWav: AudioStream = preload("res://Music/breather-round-loop.wav")
+var bossWav: AudioStream = preload("res://Music/boss.wav")
 var current_song = ""
 var next_song = ""
 
@@ -18,6 +19,9 @@ func _play(song):
 				$AudioStreamPlayer.play()
 			'breather':
 				$AudioStreamPlayer.set_stream(breatherRoundWav)
+				$AudioStreamPlayer.play()
+			'boss':
+				$AudioStreamPlayer.set_stream(bossWav)
 				$AudioStreamPlayer.play()
 
 
