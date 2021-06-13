@@ -10,10 +10,12 @@ size = 51
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=3]
-font_path = "res://TitleScreen/Cyberthrone-7nP4.ttf"
+font_path = "res://TitleScreen/Outrun future.otf"
 
 [sub_resource type="DynamicFont" id=4]
-size = 50
+size = 35
+outline_size = 1
+outline_color = Color( 0.945098, 0, 1, 1 )
 font_data = SubResource( 3 )
 
 [node name="OptionsScreen" type="Control"]
@@ -34,13 +36,13 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
 margin_left = 90.0
-margin_top = 211.0
+margin_top = 206.0
 margin_right = 1190.0
-margin_bottom = 509.0
+margin_bottom = 513.0
 
 [node name="Main" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
 margin_right = 1100.0
-margin_bottom = 298.0
+margin_bottom = 307.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 50
@@ -87,17 +89,18 @@ step = 5.0
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer/Main"]
 margin_top = 238.0
 margin_right = 1100.0
-margin_bottom = 298.0
+margin_bottom = 307.0
 alignment = 1
 
 [node name="Button" type="Button" parent="CenterContainer/MarginContainer/Main/HBoxContainer"]
 margin_left = 475.0
 margin_right = 625.0
-margin_bottom = 60.0
+margin_bottom = 69.0
 rect_min_size = Vector2( 150, 60 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 4 )
 text = "Back"
+flat = true
 [connection signal="value_changed" from="CenterContainer/MarginContainer/Main/HBox/Sliders/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="pressed" from="CenterContainer/MarginContainer/Main/HBoxContainer/Button" to="." method="_on_Button_pressed"]
