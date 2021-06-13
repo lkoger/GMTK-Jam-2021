@@ -3,6 +3,7 @@ extends Control
 var scene_path_to_load
 
 func _ready() -> void:
+	randomize()
 	get_node('/root/Globals')._play('title')
 	# Connect the pressed() method of every scene to this scene
 	for button in $Menu/CenterRow/Buttons.get_children():
