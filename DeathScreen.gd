@@ -6,22 +6,22 @@ export(String, FILE, "*.tscn") var main_menu
 func _ready() -> void:
 	get_node('/root/Globals')._play('death')
 	
-	var minutes = Globals.time_alive_score / 60
-	var seconds = Globals.time_alive_score % 60
+#	var minutes = Globals.time_alive_score / 60
+#	var seconds = Globals.time_alive_score % 60
 	var final_time_text = ""
-	if(minutes == 1):
-		final_time_text = str(minutes) + " minute "
-	elif(minutes == 0):
-		pass
-	else:
-		final_time_text = str(minutes) + " minutes "
-	
-	if(seconds == 1):
-		final_time_text += str(seconds) + " second "
-	elif(seconds == 0):
-		pass
-	else:
-		final_time_text += str(seconds) + " seconds "
+#	if(minutes == 1):
+#		final_time_text = str(minutes) + " minute "
+#	elif(minutes == 0):
+#		pass
+#	else:
+#		final_time_text = str(minutes) + " minutes "
+#
+#	if(seconds == 1):
+#		final_time_text += str(seconds) + " second "
+#	elif(seconds == 0):
+#		pass
+#	else:
+	final_time_text += str(Globals.time_alive_score) + " seconds"
 	
 	$MarginContainer/CenterContainer/HBoxContainer/TotalStats/MiddleSection/Stats/Time.text = final_time_text
 
