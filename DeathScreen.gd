@@ -3,6 +3,9 @@ extends Control
 export(String, FILE, "*.tscn") var new_game
 export(String, FILE, "*.tscn") var main_menu
 
+func _ready() -> void:
+	get_node('/root/Globals')._play('death')
+
 func _on_NewGame_pressed() -> void:
 	if ResourceLoader.exists(new_game):
 		var _error = get_tree().change_scene(new_game)
