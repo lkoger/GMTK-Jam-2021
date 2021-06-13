@@ -18,10 +18,10 @@ func _ready():
 
 func _physics_process(delta):
 	offset += 1
-	$Sprite.look_at(target.global_position)
+	$Top.look_at(target.global_position)
 
 func spawn():
-	$Sprite/Particles2D.emitting = true
+	$Top/Sprite/Particles2D.emitting = true
 	$ChargeUpTimer.start()
 
 func _spawn():

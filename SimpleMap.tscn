@@ -39,7 +39,6 @@ doople_target_path = NodePath("AMB1")
 [node name="RoundIndicatorCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RoundIndicatorScreen" parent="RoundIndicatorCanvasLayer" instance=ExtResource( 12 )]
-visible = false
 
 [node name="PauseCanvasLayer" type="CanvasLayer" parent="."]
 

@@ -10,6 +10,7 @@ var breather_phase := false
 var boss_phase := false
 var left_has_boss := true
 var round_number := 1
+onready var round_indicator = $RoundIndicatorCanvasLayer/RoundIndicatorScreen
 
 func _ready():
 	Globals.time_alive_score = 0
@@ -20,6 +21,7 @@ func _ready():
 	Globals.dextr_hits_taken = 0
 	get_node('/root/Globals')._play('main')
 	set_active_energy(true)
+	round_indicator.show_round()
 	
 func set_energy_sequence_mode(mode):
 	for node in $EnergyPaths.get_children():
@@ -61,6 +63,7 @@ func _process(delta):
 		
 
 func start_main_phase():
+	round_indicator.show_round()
 	main_phase = true
 	round_number += 1
 	for n in range(round_number):
@@ -70,6 +73,7 @@ func start_main_phase():
 	set_active_energy(true)
 
 func start_breather_phase():
+	round_indicator.show_round()
 	breather_phase = true
 	for node in $TurretPaths.get_children():
 		node.remove_turrets()
@@ -77,6 +81,7 @@ func start_breather_phase():
 	set_active_energy(true)
 
 func start_boss_phase():
+	round_indicator.show_round()
 	boss_phase = true
 	left_has_boss = not left_has_boss
 	if left_has_boss:
