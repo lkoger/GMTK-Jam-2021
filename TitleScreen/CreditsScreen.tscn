@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://TitleScreen/Mason.png" type="Texture" id=1]
 [ext_resource path="res://TitleScreen/return_to_title.gd" type="Script" id=2]
 [ext_resource path="res://TitleScreen/Outrun future.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://TitleScreen/Cyberthrone-7nP4.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://TitleScreen/Mason2.png" type="Texture" id=5]
+[ext_resource path="res://TitleScreen/Levi3.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -93,7 +95,7 @@ margin_bottom = 438.0
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Levi"]
 margin_right = 380.0
 margin_bottom = 380.0
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 
 [node name="Name" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Levi"]
 margin_top = 384.0
@@ -116,7 +118,7 @@ margin_bottom = 438.0
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Mason"]
 margin_right = 380.0
 margin_bottom = 380.0
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 
 [node name="Name" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer/HBoxContainer/Mason"]
 margin_top = 384.0

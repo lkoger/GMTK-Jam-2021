@@ -11,6 +11,8 @@ func _physics_process(delta):
 		energy -= delta * energy_loss_per_second
 	$Bar.rect_size.x = (energy / max_energy) * bar_length
 	if energy <= 0.0:
+		get_tree().call_group("energy", "queue_free")
+		get_tree().call_group("projectile", "queue_free")
 		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
 		set_physics_process(false)
 

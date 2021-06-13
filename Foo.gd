@@ -6,9 +6,15 @@ var velocity := Vector2.ZERO
 var speed := 400.0
 var direction := Vector2.ZERO
 var damage := 5.0
+var still := false
 
 func _ready():
-	_adjust_direction()
+	if not still:
+		$LifeTimer.connect("timeout", self, "queue_free")
+		_adjust_direction()
+	else:
+		set_process(false)
+		set_physics_process(false)
 
 func _process(delta):
 	velocity = direction

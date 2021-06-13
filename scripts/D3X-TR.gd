@@ -2,7 +2,6 @@ extends Player
 
 var velocity := Vector2.ZERO
 var speed := 200.0
-var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
 
@@ -11,23 +10,23 @@ func _ready():
 
 func _process(delta):
 	velocity = Vector2.ZERO
-	var new_state = 'idle-forward'
+	var new_state = 'idle'
 	
-	if Input.is_action_pressed("doople_up"):
+	if Input.is_action_pressed("dex_up"):
 		velocity.y -= 1.0
 		new_state = 'move-up'
-	elif Input.is_action_pressed("doople_down"):
+	elif Input.is_action_pressed("dex_down"):
 		velocity.y += 1.0
 		new_state = 'move-down'
-	if Input.is_action_pressed("doople_left"):
+	if Input.is_action_pressed("dex_left"):
 		velocity.x -= 1.0
 		new_state = 'move-side'
 		flipped = true
-	elif Input.is_action_pressed("doople_right"):
+	elif Input.is_action_pressed("dex_right"):
 		velocity.x += 1.0
 		new_state = 'move-side'
 		flipped = false
-	
+		
 	_change_state(new_state)
 	$AnimatedSprite.flip_h = flipped
 	
