@@ -12,7 +12,7 @@ func _play(song):
 		match song:
 			'title':
 				$AudioStreamPlayer.set_stream(titleScreenWav)
-				$AudioStreamPlayer.play(30.0)
+				$AudioStreamPlayer.play()
 			'main':
 				$AudioStreamPlayer.set_stream(mainWav)
 				$AudioStreamPlayer.play()
@@ -31,6 +31,8 @@ func _on_AudioStreamPlayer_finished():
 func get_song_time_left():
 	if $AudioStreamPlayer.playing:
 		return $AudioStreamPlayer.stream.get_length() - $AudioStreamPlayer.get_playback_position()
+	else:
+		return 0.0
 
 func fade_out_music():
 	if $AudioStreamPlayer.is_playing():

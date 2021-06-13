@@ -10,7 +10,7 @@ var boss_phase := false
 var round_number := 1
 
 func _ready():
-	get_node('/root/Globals')._play('title')
+	get_node('/root/Globals')._play('main')
 	set_active_energy(true)
 	
 func set_energy_sequence_mode(mode):

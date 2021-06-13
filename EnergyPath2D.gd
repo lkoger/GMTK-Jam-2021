@@ -1,7 +1,7 @@
 extends Path2D
 
 export (int) var num_energy_balls := 120
-export (float) var energy_amount_per_ball := 1.0
+export (float) var energy_amount_per_ball := 0.65
 export (float) var energy_life_time := 10.0
 var energy_ball = preload("res://Energy.tscn")
 var indicator = preload("res://EnergySpawnIndicator.tscn")

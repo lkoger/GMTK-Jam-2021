@@ -13,6 +13,8 @@ func _ready():
 	offset = randi()
 	if active:
 		$SpawnTimer.start()
+	$Tween.interpolate_property(self, "modulate",  modulate, Color(modulate.r, modulate.g, modulate.b, 1.0), 4.0)
+	$Tween.start()
 
 func _physics_process(delta):
 	offset += 1

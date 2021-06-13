@@ -1,9 +1,9 @@
 extends Control
 
-var max_energy := 100000.0
+var max_energy := 100.0
 var energy := max_energy
 var bar_length := 1280.0
-var energy_loss_per_second := 0.0
+var energy_loss_per_second := 4.27
 
 func _physics_process(delta):
 	energy -= delta * energy_loss_per_second
