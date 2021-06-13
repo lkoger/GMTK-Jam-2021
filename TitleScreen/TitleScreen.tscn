@@ -14,12 +14,12 @@ font_path = "res://TitleScreen/Cyberthrone-7nP4.ttf"
 size = 150
 font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://TitleScreen/Cyberthrone-7nP4.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 50
-font_data = SubResource( 4 )
+font_data = SubResource( 3 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -71,27 +71,27 @@ margin_bottom = 60.0
 next_scene = "res://SimpleMap.tscn"
 
 [node name="HowToButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 558.0
 margin_bottom = 160.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
 next_scene = "res://TitleScreen/HowToScreen.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 200.0
 margin_right = 558.0
 margin_bottom = 260.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
 next_scene = "res://TitleScreen/SettingsScreen.tscn"
 
 [node name="CreditsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_top = 300.0
 margin_right = 558.0
 margin_bottom = 360.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
 next_scene = "res://TitleScreen/CreditsScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
@@ -115,7 +115,7 @@ margin_top = 584.0
 margin_right = 1120.0
 margin_bottom = 620.0
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "Flump & Doople Games"
 align = 1
 valign = 2
