@@ -11,9 +11,9 @@ func _ready():
 	$Health.energy -= 25.0
 	$Health.normal_decay_rate = false
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
+#func _process(delta):
+#	if Input.is_action_just_pressed("ui_cancel"):
+#		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
 
 func spawn_energy_balls(origin):
 	var radius := 200.0
