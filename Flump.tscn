@@ -1,12 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Flump.gd" type="Script" id=2]
-[ext_resource path="res://Art/HoverBall Robot2.png" type="Texture" id=3]
+[ext_resource path="res://Art/AMBI.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 448, 0, 64, 90 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Flump" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Sprite" parent="." index="1"]
-scale = Vector2( 1, 1 )
-texture = ExtResource( 3 )
+[node name="AnimatedSprite" parent="." index="1"]
+frames = SubResource( 2 )

@@ -8,7 +8,6 @@ var direction := Vector2.ZERO
 var damage := 5.0
 
 func _ready():
-	assert(is_instance_valid(target))
 	_adjust_direction()
 
 func _process(delta):
@@ -28,7 +27,8 @@ func _physics_process(delta):
 ##		$Timer.start()
 
 func _adjust_direction():
-	direction = target.global_position - global_position
+	if is_instance_valid(target):
+		direction = target.global_position - global_position
 
 
 func _on_Timer_timeout():

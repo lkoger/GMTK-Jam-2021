@@ -113,5 +113,17 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="BossTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BossSpawns" type="Node2D" parent="."]
+
+[node name="left" type="Position2D" parent="BossSpawns"]
+position = Vector2( -272, 32 )
+
+[node name="right" type="Position2D" parent="BossSpawns"]
+position = Vector2( 272, 32 )
+
 [connection signal="timeout" from="BreatherTimer" to="." method="start_breather_phase"]
 [connection signal="timeout" from="MainTimer" to="." method="start_main_phase"]
+[connection signal="timeout" from="BossTimer" to="." method="start_boss_phase"]

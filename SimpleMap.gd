@@ -2,11 +2,13 @@ extends Node2D
 
 export (PackedScene) var foobar
 export (PackedScene) var energy_ball
+var boss_scene = preload("res://Boss.tscn")
 export var flump_target_path : NodePath = ""
 export var doople_target_path : NodePath = ""
 var main_phase := true
 var breather_phase := false
 var boss_phase := false
+var left_has_boss := true
 var round_number := 1
 
 func _ready():
@@ -18,6 +20,7 @@ func set_energy_sequence_mode(mode):
 		node.sequence_mode = mode
 
 func set_active_energy(val):
+	$Health.normal_decay_rate = val
 	for node in $EnergyPaths.get_children():
 		node.set_active(val)
 
@@ -33,14 +36,19 @@ func _process(delta):
 		set_turrets_active(false)
 		main_phase = false
 		$BreatherTimer.start()
-		print("in first")
 	elif breather_phase and get_node('/root/Globals').current_song == "breather" and get_node('/root/Globals').get_song_time_left() < 5.0:
+		get_node('/root/Globals').fade_out_music()
+		get_node('/root/Globals').set_next_song("title")
+		set_active_energy(false)
+		breather_phase = false
+		$BossTimer.start()
+	elif boss_phase and get_node('/root/Globals').current_song == "title" and get_node('/root/Globals').get_song_time_left() < 5.0:
 		get_node('/root/Globals').fade_out_music()
 		get_node('/root/Globals').set_next_song("main")
 		set_active_energy(false)
-		breather_phase = false
+		get_tree().get_nodes_in_group("boss")[0].fade_out()
+		boss_phase = false
 		$MainTimer.start()
-		print("in second")
 		
 
 func start_main_phase():
@@ -61,4 +69,27 @@ func start_breather_phase():
 
 func start_boss_phase():
 	boss_phase = true
-	pass
+	left_has_boss = not left_has_boss
+	$EnergyPaths/EnergyOrbPaths.sequence_mode = left_has_boss
+	$EnergyPaths/EnergyOrbPaths2.sequence_mode = not left_has_boss
+	set_active_energy(true)
+	
+	var boss = boss_scene.instance()
+	if left_has_boss:
+		boss.global_position = $BossSpawns/left.global_position
+	else:
+		boss.global_position = $BossSpawns/right.global_position
+	add_child(boss)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
