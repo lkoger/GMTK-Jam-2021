@@ -73,27 +73,27 @@ margin_bottom = 60.0
 next_scene = "res://SimpleMap.tscn"
 
 [node name="HowToButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 100.0
 margin_right = 558.0
 margin_bottom = 160.0
-rect_min_size = Vector2( 360, 60 )
-flat = true
 next_scene = "res://HowToMap.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 200.0
 margin_right = 558.0
 margin_bottom = 260.0
-rect_min_size = Vector2( 360, 60 )
-flat = true
 next_scene = "res://TitleScreen/SettingsScreen.tscn"
 
 [node name="CreditsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 300.0
 margin_right = 558.0
 margin_bottom = 360.0
-rect_min_size = Vector2( 360, 60 )
-flat = true
 next_scene = "res://TitleScreen/CreditsScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
