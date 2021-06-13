@@ -13,7 +13,7 @@ func _physics_process(delta):
 	if energy <= 0.0:
 		get_tree().call_group("energy", "queue_free")
 		get_tree().call_group("projectile", "queue_free")
-		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
+		get_tree().change_scene("res://DeathScreen.tscn")
 		set_physics_process(false)
 
 func add_energy(amnt):
