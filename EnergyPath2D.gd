@@ -13,6 +13,8 @@ func _ready():
 func spawn_random_ball():
 	var e = energy_ball.instance()
 	pathf.offset = randi()
+	e.lifetime = energy_life_time
+	e.amount = energy_amount_per_ball
 	e.global_position = pathf.global_position
 	get_tree().root.call_deferred("add_child", e)
 

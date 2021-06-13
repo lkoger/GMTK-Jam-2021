@@ -39,7 +39,6 @@ doople_target_path = NodePath("AMB1")
 [node name="RoundIndicatorCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RoundIndicatorScreen" parent="RoundIndicatorCanvasLayer" instance=ExtResource( 12 )]
-visible = false
 
 [node name="PauseCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -132,6 +131,7 @@ position = Vector2( -272, 32 )
 
 [node name="right" type="Position2D" parent="BossSpawns"]
 position = Vector2( 272, 32 )
+
 [connection signal="timeout" from="BreatherTimer" to="." method="start_breather_phase"]
 [connection signal="timeout" from="MainTimer" to="." method="start_main_phase"]
 [connection signal="timeout" from="SurvivalTimer" to="." method="_on_SurvivalTimer_timeout"]

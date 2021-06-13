@@ -3,7 +3,9 @@
 [ext_resource path="res://EnergySpawnIndicator.gd" type="Script" id=1]
 [ext_resource path="res://Art/circle.png" type="Texture" id=2]
 
-[node name="EnergySpawnIndicator" type="Node2D"]
+[node name="EnergySpawnIndicator" type="Node2D" groups=[
+"energy",
+]]
 modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 1 )
 

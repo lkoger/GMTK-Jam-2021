@@ -27,10 +27,10 @@ func _play(song):
 				$AudioStreamPlayer.play()
 			'main':
 				$AudioStreamPlayer.set_stream(mainWav)
-				$AudioStreamPlayer.play(70)
+				$AudioStreamPlayer.play()
 			'breather':
 				$AudioStreamPlayer.set_stream(breatherRoundWav)
-				$AudioStreamPlayer.play(40)
+				$AudioStreamPlayer.play()
 			'boss':
 				$AudioStreamPlayer.set_stream(bossWav)
 				$AudioStreamPlayer.play()

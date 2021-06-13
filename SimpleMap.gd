@@ -10,6 +10,7 @@ var breather_phase := false
 var boss_phase := false
 var left_has_boss := true
 var round_number := 1
+onready var round_indicator = $RoundIndicatorCanvasLayer/RoundIndicatorScreen
 
 func _ready():
 	Globals.time_alive_score = 0
@@ -20,10 +21,11 @@ func _ready():
 	Globals.dextr_hits_taken = 0
 	get_node('/root/Globals')._play('main')
 	set_active_energy(true)
+	round_indicator.show_round()
 	
 func set_energy_sequence_mode(mode):
 	for node in $EnergyPaths.get_children():
-		node.sequence_mode = mode
+		node.mode = mode
 
 func set_active_energy(val):
 	$Health.normal_decay_rate = val
@@ -61,26 +63,34 @@ func _process(delta):
 		
 
 func start_main_phase():
+	round_indicator.show_round()
 	main_phase = true
 	round_number += 1
 	for n in range(round_number):
 		for node in $TurretPaths.get_children():
 			node.add_turret()
-	set_energy_sequence_mode(false)
+	set_energy_sequence_mode(0)
 	set_active_energy(true)
 
 func start_breather_phase():
+	round_indicator.show_round()
 	breather_phase = true
 	for node in $TurretPaths.get_children():
 		node.remove_turrets()
-	set_energy_sequence_mode(true)
+	set_energy_sequence_mode(1)
 	set_active_energy(true)
 
 func start_boss_phase():
+	round_indicator.show_round()
 	boss_phase = true
 	left_has_boss = not left_has_boss
-	$EnergyPaths/EnergyOrbPaths.sequence_mode = left_has_boss
-	$EnergyPaths/EnergyOrbPaths2.sequence_mode = not left_has_boss
+	if left_has_boss:
+		$EnergyPaths/EnergyOrbPaths.mode = 1
+		$EnergyPaths/EnergyOrbPaths2.mode = 2
+	else:
+		$EnergyPaths/EnergyOrbPaths.mode = 2
+		$EnergyPaths/EnergyOrbPaths2.mode = 1
+		
 	set_active_energy(true)
 	
 	var boss = boss_scene.instance()
